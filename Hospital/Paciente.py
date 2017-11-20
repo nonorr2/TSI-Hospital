@@ -19,3 +19,14 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
+from osv import osv
+from osv import fields
+
+class ClassName(osv.osv):
+    _name = 'Pacientes'
+    _description = 'Pacientes del hospital'
+ 
+    _columns = {
+            'name':fields.char('data', size=64, required=True),
+        }
+ClassName()
