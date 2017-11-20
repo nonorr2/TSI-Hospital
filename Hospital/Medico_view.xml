@@ -34,6 +34,16 @@
     					<field name="direccion" />
     					<field name="email" />
     					<field name="telefono" />
+    					<field name="cita_ids" colspan="4" mode="tree" nolabel="1">
+    						<tree>
+    							<field name="name" />
+    							<field name="medico" />
+    							<field name="paciente" />
+    							<field name="fechaHora" />
+    							<field name="ambulancia" />
+    							<field name="descripcion" />
+    						</tree>
+    					</field>
     				</group>
     			</form>
     		</field>
