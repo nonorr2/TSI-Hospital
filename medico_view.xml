@@ -54,7 +54,8 @@
     		<field name="res_model">medico</field>
     		<field name="view_type">form</field>
     		<field name="view_model">tree,form</field>
-    	</record>
+    	</record> 
+    	
     	
     	<!-- Menu -->
     	<menuitem id="hospital" name="Hospital" action="act_medico"/> 
