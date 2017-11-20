@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="ambulancia_form_view">
+			<field name="name">ambulancia.form</field>
+			<field name="model">ambulancia</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="form_string">
+					<field name="name" select="1" />
+					<field name="capacidad" />
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_ambulancia_tree_view">
+			<field name="name">view_ambulancia_tree</field>
+			<field name="model">ambulancia</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="capacidad" />
+				</tree>
+			</field>
+		</record>
+
+
+
+		<record id="act_ambulancia" model="ir.actions.act_window">
+			<field name="name">ambulancia</field>
+			<field name="res_model">ambulancia</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form, tree</field>
+		</record>
+		<menuitem name="Usuarios" id="ambulancias_submenu" parent="medico"
+			sequence="100" />
+	</data>
+</openerp>
