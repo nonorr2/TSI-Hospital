@@ -22,11 +22,17 @@
 from osv import osv
 from osv import fields
 
-class ClassName(osv.osv):
+class Paciente(osv.Model):
     _name = 'Pacientes'
     _description = 'Pacientes del hospital'
  
     _columns = {
-            'name':fields.char('data', size=64, required=True),
+            'dni':fields.char('DNI', size=64, required=True),
+            'numSegurSocial' :fields.integer('Nº de Seguridad Social', required=True),
+            'nombre':fields.char('Nombre', size=64, required=True),
+            'apellidos':fields.char('Apellidos', size=200, required=True),
+            'direccion':fields.char('Dirección', size=200, required=True),
+            'email':fields.char('Email', size=64, required=True),
+            'telefono': fields.integer('Telefono') 
         }
-ClassName()
+Paciente()
