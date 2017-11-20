@@ -1,1 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="Cita_form_view">
+			<field name="name">Cita.form</field>
+			<field name="model">Cita</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="form_string">
+					<field name="name" select="1" />
+					<field name="fechaHora" />
+					<field name="medico" />
+					<field name="paciente" />
+					<field name="ambulancia" />
+					<field name="descripcion" />
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_gym_gymuser_tree_view">
+			<field name="name">view_Cita_tree</field>
+			<field name="model">Cita</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="fechaHora" />
+					<field name="medico" />
+					<field name="paciente" />
+					<field name="descripcion" />
+				</tree>
+			</field>
+		</record>
+
+
+
+		<record id="act_Cita" model="ir.actions.act_window">
+			<field name="name">Citas</field>
+			<field name="res_model">Cita</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form, tree</field>
+		</record>
+		<menuitem name="Usuarios" id="gymusers_submenu" parent="gym"
+			sequence="100" />
+	</data>
+</openerp>

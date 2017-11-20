@@ -27,14 +27,10 @@ class Cita(osv.Model):
     _description = 'Cita de un paciente con un médico'
     _columns = {
         'name': fields.char('Id', size=64, required=True),
-        'fechaHora': fields.datetime('Ends',required=True, autodate = True),
-        'medico': fields.integer("Capacity"),
-        'gymusers_ids': fields.many2many( 'gymuser','gymuser_gymclass_rel', 'gymclass_id', 'gymuser_id', 'Confirmed users'),
-        'activityType': fields.selection([
-                                            ('dance','Dance'),
-                                            ('aerobic','Aerobic'),
-                                            ('anaerobic','Anaerobic'),
-                                            ('relax','Relax'),
-                                            ],'Type of activity'),
+        'fechaHora': fields.datetime('Fecha y Hora',required=True, autodate = True),
+        'medico': fields.many2one("Medico"),
+        'paciente': fields.many2one("Paciente"),
+        'ambulancia': fields.many2one("Ambulancia"),
+        'descripcion': fields.text("Descripcion"),
     }
 Cita()
