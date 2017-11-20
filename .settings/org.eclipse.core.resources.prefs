@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
 encoding/Ambulancia.py=utf-8
-encoding/Medico.py=utf-8
 encoding/__init__.py=utf-8
 encoding/__openerp__.py=utf-8
+encoding/medico.py=utf-8

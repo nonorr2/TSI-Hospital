@@ -25,7 +25,7 @@
     		<field name="model">medico</field>
     		<field name="type">form</field>
     		<field name="arch" type="xml">
-    			<form string="Médico">
+    			<form string="Medico">
     				<group col="4" colspan="4">
     					<field name="name" />
     					<field name="apellidos" />
@@ -34,16 +34,15 @@
     					<field name="direccion" />
     					<field name="email" />
     					<field name="telefono" />
-    					<field name="cita_ids" colspan="4" mode="tree" nolabel="1">
+    					<!--  <field name="cita_ids" colspan="4" mode="tree" nolabel="1">
     						<tree>
     							<field name="name" />
-    							<field name="medico" />
     							<field name="paciente" />
     							<field name="fechaHora" />
     							<field name="ambulancia" />
     							<field name="descripcion" />
     						</tree>
-    					</field>
+    					</field> -->
     				</group>
     			</form>
     		</field>
@@ -51,7 +50,7 @@
     	    	
     	<!-- Accion -->
     	<record id="act_medico" model="ir.actions.act_window">
-    		<field name="name">Medico</field>
+    		<field name="name">medico</field>
     		<field name="res_model">medico</field>
     		<field name="view_type">form</field>
     		<field name="view_model">tree,form</field>
@@ -59,7 +58,7 @@
     	
     	<!-- Menu -->
     	<menuitem id="hospital" name="Hospital" action="act_medico"/> 
-    	<menuitem id="medico" name="Medico" parent="medico" sequence="100" action="act_medico"/>  
+    	<menuitem id="medico" name="Medico" parent="hospital" sequence="100" action="act_medico"/>  
     	 
     </data>
 </openerp>

@@ -30,7 +30,7 @@
     Gestión hospitalaria.
     """,
     "init_xml": [],
-    'data': [],
+    'data': ['medico_view.xml'],
     'demo_xml': [],
     'installable': True,
     'active': False,
