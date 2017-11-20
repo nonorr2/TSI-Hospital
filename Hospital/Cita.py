@@ -19,19 +19,22 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
+from osv import osv
+from osv import fields
 
-{
-    "name": "Hospital",
-    "version": "1.0",
-    "depends": ["base"],
-    "author": "Grupo1",
-    "category": "Hospital",
-    "description": """
-    Gestión hospitalaria.
-    """,
-    "init_xml": [],
-    'data': [],
-    'demo_xml': [],
-    'installable': True,
-    'active': False,
-}
+class Cita(osv.Model):
+    _name = 'Cita'
+    _description = 'Cita de un paciente con un médico'
+    _columns = {
+        'name': fields.char('Id', size=64, required=True),
+        'fechaHora': fields.datetime('Ends',required=True, autodate = True),
+        'medico': fields.integer("Capacity"),
+        'gymusers_ids': fields.many2many( 'gymuser','gymuser_gymclass_rel', 'gymclass_id', 'gymuser_id', 'Confirmed users'),
+        'activityType': fields.selection([
+                                            ('dance','Dance'),
+                                            ('aerobic','Aerobic'),
+                                            ('anaerobic','Anaerobic'),
+                                            ('relax','Relax'),
+                                            ],'Type of activity'),
+    }
+Cita()
