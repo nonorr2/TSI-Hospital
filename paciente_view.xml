@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- Accion -->
+		<record id="act_paciente" model="ir.actions.act_window">
+			<field name="name">paciente</field>
+			<field name="res_model">paciente</field>
+			<field name="view_type">form</field>
+			<field name="view_model">form</field>
+		</record>
+
+		<!-- Menu -->
+		<menuitem name="Pacientes" id="paciente_submenu" parent="hospital" sequence="160" />
+		<menuitem name="Ver Paciente" id="ver_paciente_submenu" parent="paciente_submenu" sequence="170" action="act_paciente" />
+
+	</data>
+</openerp>
