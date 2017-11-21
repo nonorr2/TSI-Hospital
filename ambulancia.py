@@ -26,7 +26,8 @@ class ambulancia(osv.Model):
     _name = 'ambulancia'
     _description = 'ambulancia'
     _columns = {
-                'name':fields.char('Matricula', size=64, required=True, readonly=False),
+                'name':fields.char('Id', size=64, required=True, readonly=False),
+                'matricula':fields.char('Matricula', size=64, required=True, readonly=False),
                 'capacidad':fields.integer('Capacidad', required=True, readonly=False),
                 #'cita':fields.one2many('cita'),
     }
