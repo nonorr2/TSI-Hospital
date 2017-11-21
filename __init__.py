@@ -23,3 +23,4 @@
 import medico
 import cita
 import ambulancia
+import paciente

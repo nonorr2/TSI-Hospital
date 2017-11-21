@@ -10,9 +10,10 @@
 				<form string="form_string">
 					<field name="name" select="1" />
 					<field name="fechaHora" />
-					<field name="descripcion" />
+					<field name="numSegurSocial" />
 					<field name="numColegiado" />
 					<field name="matricula" />
+					<field name="descripcion" />
 				</form>
 			</field>
 		</record>
@@ -23,11 +24,11 @@
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
-					<field name="name" />
 					<field name="fechaHora" />
-					<field name="descripcion" />
+					<field name="numSegurSocial" />
 					<field name="numColegiado" />
 					<field name="matricula" />
+					<field name="descripcion" />
 				</tree>
 			</field>
 		</record>
@@ -37,7 +38,9 @@
 			<field name="model">cita</field>
 			<field name="type">calendar</field>
 			<field name="arch" type="xml">
-				<calendar color="numColegiado" date_start="fechaHora" string="Citas">
+				<calendar color="numColegiado" date_start="fechaHora"
+					string="Citas">
+					<field name="numSegurSocial" />
 					<field name="descripcion" />
 				</calendar>
 			</field>

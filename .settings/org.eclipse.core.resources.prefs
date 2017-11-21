@@ -4,3 +4,4 @@ encoding/__openerp__.py=utf-8
 encoding/ambulancia.py=utf-8
 encoding/cita.py=utf-8
 encoding/medico.py=utf-8
+encoding/paciente.py=utf-8
