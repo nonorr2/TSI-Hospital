@@ -32,11 +32,23 @@
 			</field>
 		</record>
 
+		<record model="ir.ui.view" id="cita_calendar_view">
+			<field name="name">cita_view_calendar</field>
+			<field name="model">cita</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar color="numColegiado" date_start="fechaHora" string="Citas">
+					<field name="descripcion" />
+				</calendar>
+			</field>
+		</record>
+
+
 		<record id="act_cita" model="ir.actions.act_window">
 			<field name="name">cita</field>
 			<field name="res_model">cita</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form,tree</field>
+			<field name="view_mode">form,tree,calendar</field>
 		</record>
 
 		<menuitem name="Citas" id="citas_submenu" parent="hospital"
