@@ -35,6 +35,6 @@ class medico(osv.Model):
             'direccion':fields.char('Dirección', size=64, required=False, readonly=False),
             'email':fields.char('Correo electrónico', size=64, required=False, readonly=False),
             'telefono':fields.char('Teléfono', size=64, required=True, readonly=False),
-            'cita_ids':fields.one2many('cita', 'name', 'Citas')
+            'cita_ids':fields.one2many('cita','name','Citas')
         }
 medico()
