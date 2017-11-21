@@ -31,9 +31,10 @@
 			<field name="name">ambulancia</field>
 			<field name="res_model">ambulancia</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form, tree</field>
+			<field name="view_mode">form,tree</field>
 		</record>
-		<menuitem name="Usuarios" id="ambulancias_submenu" parent="medico"
-			sequence="100" />
+		
+		<menuitem name="Ambulancias" id="ambulancias_submenu" parent="hospital" sequence="100"/>
+		<menuitem name="Ambulancias" id="ambulancias_sub_submenu" parent="ambulancias_submenu" sequence="100" action="act_ambulancia"/>
 	</data>
 </openerp>

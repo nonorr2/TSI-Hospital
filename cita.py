@@ -22,15 +22,16 @@
 from osv import osv
 from osv import fields
 
-class Cita(osv.Model):
-    _name = 'Cita'
-    _description = 'Cita de un paciente con un médico'
+class cita(osv.Model):
+    _name = 'cita'
+    _description = 'cita de un paciente con un médico'
+    
     _columns = {
         'name': fields.char('Id', size=64, required=True),
         'fechaHora': fields.datetime('Fecha y Hora',required=True, autodate = True),
-        'medico': fields.many2one("Medico"), #Modificar
-        'paciente': fields.many2one("Paciente"), #Modificar
-        'ambulancia': fields.many2one("Ambulancia"), #Modificar
+        #'medico': fields.many2one("Medico"),
+        #'paciente': fields.many2one("Paciente"),
+        #'ambulancia': fields.many2one("ambulancia"),
         'descripcion': fields.text("Descripcion"),
     }
-Cita()
+cita()

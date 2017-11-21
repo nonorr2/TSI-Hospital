@@ -22,12 +22,12 @@
 from osv import osv
 from osv import fields
 
-class Ambulancia(osv.Model):
-    _name = 'Ambulancia'
-    _description = 'Ambulancia'
+class ambulancia(osv.Model):
+    _name = 'ambulancia'
+    _description = 'ambulancia'
     _columns = {
                 'name':fields.char('Matricula', size=64, required=True, readonly=False),
-                'apellidos':fields.integer('Capacidad', size=64, required=True, readonly=False),
-                'cita':fields.one2many('Cita'), #Modificar
+                'capacidad':fields.integer('Capacidad', required=True, readonly=False),
+                #'cita':fields.one2many('cita'),
     }
-Ambulancia()
+ambulancia()

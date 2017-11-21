@@ -27,10 +27,10 @@
     "author": "Grupo1",
     "category": "Hospital",
     "description": """
-    Gestión hospitalaria.
+    Gestion hospitalaria.
     """,
     "init_xml": [],
-    'data': ['medico_view.xml'],
+    'data': ['medico_view.xml','cita_view.xml','ambulancia_view.xml'],
     'demo_xml': [],
     'installable': True,
     'active': False,
