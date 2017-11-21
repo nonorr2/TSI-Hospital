@@ -26,7 +26,8 @@
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="Medico">
-					<group col="4" colspan="4">
+					<group string="Médico" colspan="4" col="4">
+						<field name="foto_medico" widget="image" colspan="4" />
 						<field name="name" />
 						<field name="apellidos" />
 						<field name="dni" />
@@ -34,20 +35,21 @@
 						<field name="direccion" />
 						<field name="email" />
 						<field name="telefono" />
-						<notebook colspan="4">
-							<page string="Citas">
-								<field name="cita_ids" mode="tree" nolabel="1">
-									<tree>
-										<field name="name" />
-										<field name="numSegurSocial" />
-										<field name="fechaHora" />
-										<field name="matricula" />
-										<field name="descripcion" />
-									</tree>
-								</field>
-							</page>
-						</notebook>
 					</group>
+					<newline />
+					<notebook colspan="4">
+						<page string="Citas">
+							<field name="cita_ids" mode="tree" nolabel="1">
+								<tree>
+									<field name="name" />
+									<field name="numSegurSocial" />
+									<field name="fechaHora" />
+									<field name="matricula" />
+									<field name="descripcion" />
+								</tree>
+							</field>
+						</page>
+					</notebook>
 				</form>
 			</field>
 		</record>
