@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+
 		<record model="ir.ui.view" id="cita_form_view">
 			<field name="name">cita_form_view</field>
 			<field name="model">cita</field>
