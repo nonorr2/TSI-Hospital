@@ -37,7 +37,7 @@
 			<field name="name">ambulancia</field>
 			<field name="res_model">ambulancia</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form,tree</field>
+			<field name="view_mode">tree,form</field>
 		</record>
 		
 		<menuitem name="Ambulancias" id="ambulancias_submenu" parent="hospital" sequence="100"/>
