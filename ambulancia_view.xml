@@ -7,9 +7,13 @@
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="form_string">
-					<field name="name" select="1" />
-					<field name="matricula" />
-					<field name="capacidad" />
+				<group string="Ambulancia" colspan="2">
+					<field name="name" select="1" colspan="2"/>
+					<newline />
+					<field name="matricula" colspan="2"/>
+					<newline />
+					<field name="capacidad" colspan="2"/>
+					</group>
 				</form>
 			</field>
 		</record>
