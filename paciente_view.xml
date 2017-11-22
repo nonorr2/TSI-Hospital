@@ -1,17 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+
+		<!-- form -->
+		<record model="ir.ui.view" id="hospital_paciente_form_view">
+			<field name="name">hospital_paciente_form_view</field>
+			<field name="model">paciente</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="paciente_form">
+					<group colspan="3">
+						<field name="dni" />
+						<field name="numSegurSocial" />
+					</group>
+					<field name="photo" nolabel="1" widget="image" colspan="1" />
+					<field name="name" />
+					<field name="apellidos" />
+					<field name="direccion" />
+					<field name="email" />
+					<field name="telefono" />
+					<newline />
+					<notebook colspan="4">
+						<page string="Citas">
+							<field name="citas_ids" mode="tree" nolabel="1">
+								<tree>
+									<field name="name" />
+									<field name="fechaHora" />
+									<field name="descripcion" />
+								</tree>
+							</field>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<!-- tree -->
+		<record model="ir.ui.view" id="hospital_paciente_tree_view">
+			<field name="name">hospital_paciente_tree_view</field>
+			<field name="model">paciente</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="paciente_tree">
+					<field name="dni" />
+					<field name="numSegurSocial" />
+					<field name="name" />
+					<field name="apellidos" />
+					<field name="direccion" />
+					<field name="email" />
+					<field name="telefono" />
+					<field name="citas_ids" />
+				</tree>
+			</field>
+		</record>
+
 		<!-- Accion -->
 		<record id="act_paciente" model="ir.actions.act_window">
 			<field name="name">paciente</field>
 			<field name="res_model">paciente</field>
 			<field name="view_type">form</field>
-			<field name="view_model">form</field>
+			<field name="view_mode">form,tree</field>
 		</record>
 
 		<!-- Menu -->
-		<menuitem name="Pacientes" id="paciente_submenu" parent="hospital" sequence="160" />
-		<menuitem name="Ver Paciente" id="ver_paciente_submenu" parent="paciente_submenu" sequence="170" action="act_paciente" />
+		<menuitem name="Pacientes" id="paciente_submenu" parent="hospital"
+			sequence="160" />
+		<menuitem name="Ver Paciente" id="ver_paciente_submenu"
+			parent="paciente_submenu" sequence="170" action="act_paciente" />
 
 	</data>
 </openerp>
