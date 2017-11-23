@@ -30,12 +30,12 @@ class medico(osv.Model):
     _columns = {
             'name':fields.char('Nombre', size=64, required=True, readonly=False),
             'apellidos':fields.char('Apellidos', size=64, required=True, readonly=False),
-            'dni':fields.char('DNI', size=64, required=True, readonly=False),
-            'numColegiado':fields.char('Número colegiado', size=64, required=True, readonly=False),
+            'dni':fields.char('DNI', size=9, required=True, readonly=False),
+            'numColegiado':fields.char('Número colegiado', size=10, required=True, readonly=False),
             'direccion':fields.char('Dirección', size=64, required=False, readonly=False),
             'email':fields.char('Correo electrónico', size=64, required=False, readonly=False),
-            'telefono':fields.char('Teléfono', size=64, required=True, readonly=False),
+            'telefono':fields.char('Teléfono', size=9, required=True, readonly=False),
             'foto_medico':fields.binary('Foto'),
-            'cita_ids':fields.one2many('cita','name','Citas')
+            'cita_ids':fields.one2many('cita','name','Citas'),
         }
 medico()

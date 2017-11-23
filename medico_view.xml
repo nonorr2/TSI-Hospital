@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-	<data>
+	<data>	
 		<!-- Tree view -->
 		<record model="ir.ui.view" id="view_medico_tree">
 			<field name="name">view_medico_tree</field>
@@ -64,9 +64,9 @@
 
 		<!-- Menu -->
 		<menuitem id="hospital" name="Hospital" action="act_medico" />
-		<menuitem id="medico" name="Medico" parent="hospital"
+		<menuitem id="medico" name="Medicos" parent="hospital"
 			sequence="100" />
-		<menuitem id="medico_submenu" name="Medico" parent="medico"
+		<menuitem id="medico_submenu" name="Medicos" parent="medico"
 			sequence="100" action="act_medico" />
 
 	</data>
