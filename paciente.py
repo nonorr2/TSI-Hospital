@@ -28,12 +28,12 @@ class paciente(osv.Model):
  
     _columns = {
             'name':fields.char('Nombre', size=64, required=True),
-            'dni':fields.char('DNI', size=64, required=True),
+            'dni':fields.char('DNI', size=9, required=True),
             'numSegurSocial' :fields.integer('Nº Seguridad Social', required=True),
             'apellidos':fields.char('Apellidos', size=200, required=True),
             'direccion':fields.char('Dirección', size=200, required=True),
             'email':fields.char('Email', size=64, required=True),
-            'telefono': fields.integer('Telefono'),
+            'telefono': fields.integer('Telefono', size=9),
             'photo': fields.binary('Foto'), 
             'citas_ids':fields.one2many('cita', 'paciente_id', 'Citas'),
         }
