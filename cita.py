@@ -27,7 +27,7 @@ class cita(osv.Model):
     _description = 'cita de un paciente con un medico'
     
     _columns = {
-        'name': fields.char('Id', size=64, required=True),
+        'name': fields.integer('Id', size=64, required=True),
         'fechaHora': fields.datetime('Fecha y Hora',required=True, autodate = True),
         'numColegiado': fields.many2one("medico","Medico", required=True),
         'numSegurSocial': fields.many2one("paciente","Paciente", required=True),

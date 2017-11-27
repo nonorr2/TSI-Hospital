@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+		<!-- Search view -->
+		<record model="ir.ui.view" id="cita_search_view">
+			<field name="name">cita_search_view</field>
+			<field name="model">cita</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Search citas">
+
+					<field name="fechaHora" />
+					<field name="numSegurSocial" />
+					<field name="numColegiado" />
+					<field name="matricula" />
+					<filter string="Citas pendientes"
+						domain="[('fechaHora', '&gt;', time.strftime('%%Y-%%m-%%d'))]" />
+					<group expand="1" string="dufg">
+						<filter string="Medico" context="{'group_by': 'numColegiado'}"/>
+					</group>	
+
+				</search>
+			</field>
+		</record>
 
 		<record model="ir.ui.view" id="cita_form_view">
 			<field name="name">cita_form_view</field>
@@ -55,6 +76,7 @@
 			<field name="res_model">cita</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">form,tree,calendar</field>
+			<field name="search_view_id" ref="cita_search_view" />
 		</record>
 
 		<menuitem name="Citas" id="citas_submenu" parent="hospital"

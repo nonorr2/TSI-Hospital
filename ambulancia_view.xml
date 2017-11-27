@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+			
 		<record model="ir.ui.view" id="ambulancia_form_view">
 			<field name="name">ambulancia.form</field>
 			<field name="model">ambulancia</field>
