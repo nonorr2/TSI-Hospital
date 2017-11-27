@@ -9,8 +9,7 @@
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="paciente_form">
-				<group string ='Paciente'>
-					<group colspan="3">
+					<group string='Paciente' colspan="3">
 						<field name="dni" />
 						<field name="numSegurSocial" />
 					</group>
@@ -32,7 +31,6 @@
 							</field>
 						</page>
 					</notebook>
-					</group>
 				</form>
 			</field>
 		</record>
@@ -67,8 +65,8 @@
 		<!-- Menu -->
 		<menuitem name="Pacientes" id="paciente_submenu" parent="hospital"
 			sequence="160" />
-		<menuitem name="Pacientes" id="ver_paciente_submenu"
-			parent="paciente_submenu" sequence="170" action="act_paciente" />
+		<menuitem name="Pacientes" id="ver_paciente_submenu" parent="paciente_submenu"
+			sequence="170" action="act_paciente" />
 
 	</data>
 </openerp>
