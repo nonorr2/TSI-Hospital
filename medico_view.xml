@@ -42,9 +42,9 @@
 							<field name="cita_ids" mode="tree" nolabel="1">
 								<tree>
 									<field name="name" />
-									<field name="numSegurSocial" />
+									<field name="paciente_id" />
 									<field name="fechaHora" />
-									<field name="matricula" />
+									<field name="ambulancia_id" />
 									<field name="descripcion" />
 								</tree>
 							</field>

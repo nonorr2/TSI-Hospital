@@ -12,12 +12,13 @@
 					<field name="fechaHora" />
 					<field name="paciente_id" />
 					<field name="medico_id" />
-					<field name="matricula" />
+					<field name="ambulancia_id" />
 					<filter string="Citas pendientes"
 						domain="[('fechaHora', '&gt;', time.strftime('%%Y-%%m-%%d'))]" />
-					<group expand="1" string="dufg">
+					<group expand="1" string="Group by..">
 						<filter string="Medico" context="{'group_by': 'medico_id'}"/>
-					</group>	
+						<filter string="Paciente" context="{'group_by': 'paciente_id'}"/>
+					</group>
 
 				</search>
 			</field>
@@ -34,7 +35,7 @@
 						<field name="fechaHora" />
 						<field name="paciente_id" />
 						<field name="medico_id" />
-						<field name="matricula" />
+						<field name="ambulancia_id" />
 						<newline />
 						<field name="descripcion" colspan="4" />
 					</group>
@@ -51,7 +52,7 @@
 					<field name="fechaHora" />
 					<field name="paciente_id" />
 					<field name="medico_id" />
-					<field name="matricula" />
+					<field name="ambulancia_id" />
 					<field name="descripcion" />
 				</tree>
 			</field>
