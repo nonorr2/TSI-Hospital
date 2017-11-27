@@ -10,13 +10,13 @@
 				<search string="Search citas">
 
 					<field name="fechaHora" />
-					<field name="numSegurSocial" />
-					<field name="numColegiado" />
+					<field name="paciente_id" />
+					<field name="medico_id" />
 					<field name="matricula" />
 					<filter string="Citas pendientes"
 						domain="[('fechaHora', '&gt;', time.strftime('%%Y-%%m-%%d'))]" />
 					<group expand="1" string="dufg">
-						<filter string="Medico" context="{'group_by': 'numColegiado'}"/>
+						<filter string="Medico" context="{'group_by': 'medico_id'}"/>
 					</group>	
 
 				</search>
@@ -32,8 +32,8 @@
 					<group string="Cita" colspan="4" col="4">
 						<field name="name" select="1" />
 						<field name="fechaHora" />
-						<field name="numSegurSocial" />
-						<field name="numColegiado" />
+						<field name="paciente_id" />
+						<field name="medico_id" />
 						<field name="matricula" />
 						<newline />
 						<field name="descripcion" colspan="4" />
@@ -49,8 +49,8 @@
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="fechaHora" />
-					<field name="numSegurSocial" />
-					<field name="numColegiado" />
+					<field name="paciente_id" />
+					<field name="medico_id" />
 					<field name="matricula" />
 					<field name="descripcion" />
 				</tree>
@@ -62,9 +62,9 @@
 			<field name="model">cita</field>
 			<field name="type">calendar</field>
 			<field name="arch" type="xml">
-				<calendar color="numColegiado" date_start="fechaHora"
+				<calendar color="medico_id" date_start="fechaHora"
 					string="Citas">
-					<field name="numSegurSocial" />
+					<field name="paciente_id" />
 					<field name="descripcion" />
 				</calendar>
 			</field>

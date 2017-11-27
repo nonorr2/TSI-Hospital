@@ -35,6 +35,6 @@ class paciente(osv.Model):
             'email':fields.char('Email', size=64, required=True),
             'telefono': fields.integer('Telefono'),
             'photo': fields.binary('Foto'), 
-            'citas_ids':fields.one2many('cita', 'numSegurSocial', 'Citas'),
+            'citas_ids':fields.one2many('cita', 'paciente_id', 'Citas'),
         }
 paciente()

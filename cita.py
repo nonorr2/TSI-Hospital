@@ -29,9 +29,9 @@ class cita(osv.Model):
     _columns = {
         'name': fields.integer('Id', size=64, required=True),
         'fechaHora': fields.datetime('Fecha y Hora',required=True, autodate = True),
-        'numColegiado': fields.many2one("medico","Medico", required=True),
-        'numSegurSocial': fields.many2one("paciente","Paciente", required=True),
-        'matricula': fields.many2one("ambulancia","Ambulancia"),
+        'medico_id': fields.many2one("medico","Medico", required=True),
+        'paciente_id': fields.many2one("paciente","Paciente", required=True),
+        'ambulancia_id': fields.many2one("ambulancia","Ambulancia"),
         'descripcion': fields.text("Descripcion", required=True),
     }
 cita()
