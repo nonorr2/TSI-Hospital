@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-	<data>	
+	<data>
+		<!-- kanban -->	
+
+		<record model="ir.ui.view" id="view_medico_kanban">
+			<field name="name">view_medico_kanban</field>
+			<field name="model">medico</field>
+			<field name="priority" eval="1" />
+			<field name="arch" type="xml">
+				<kanban quick_create="false" create="true">
+					<field name="foto_medico" />
+					<templates>
+						<t t-name="kanban-box">
+							<div style="position: relative">
+								<a t-if="! read_only_mode" type="delete"
+									style="position: absolute; right: 0; padding: 4px; diplay: inline-block">
+									<img src="/kemas/static/src/img/icons/delete_red.png" alt="Eliminar" />
+								</a>
+								<div class="oe_module_vignette">
+									<a type="open">
+										<img
+											t-att-src="kanban_image('medico', 'foto_medico', record.id.value)"
+											class="oe_kanban_image oe_kanban_avatar_smallbox" />
+									</a>
+									<div class="oe_module_desc">
+										<div
+											class="oe_kanban_box_content oe_kanban_color_bglight oe_kanban_color_border">
+											<table class="oe_kanban_table">
+												<tr>
+													<td class="oe_kanban_title1" align="left" valign="middle">
+														<h4>
+															<a type="open">
+																<field name="name" />
+															</a>
+														</h4>
+														<div>
+															<a t-if="record.email.raw_value" title="Mail"
+																t-att-href="'mailto:'+record.email.value">
+																<i>
+																	<field name="email" />
+																</i>
+															</a>
+														</div>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
 		<!-- Tree view -->
 		<record model="ir.ui.view" id="view_medico_tree">
 			<field name="name">view_medico_tree</field>
@@ -59,7 +113,7 @@
 			<field name="name">medico</field>
 			<field name="res_model">medico</field>
 			<field name="view_type">form</field>
-			<field name="view_model">tree,form</field>
+			<field name="view_model">tree,form,kanban</field>
 		</record>
 
 		<!-- Menu -->
