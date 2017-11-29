@@ -20,18 +20,20 @@
 #
 ##############################################################################
 
-{
-    "name": "Hospital",
-    "version": "1.0",
-    "depends": ["base"],
-    "author": "Grupo1",
-    "category": "Hospital",
-    "description": """
-    Gestion hospitalaria.
-    """,
-    "init_xml": [],
-    'data': ['medico_view.xml','cita_view.xml','ambulancia_view.xml','paciente_view.xml','tratamiento_view.xml'],
-    'demo_xml': [],
-    'installable': True,
-    'active': False,
-}
+from osv import osv
+from osv import fields
+
+class tratamiento(osv.Model):
+    _name = 'tratamiento'
+    _description = 'Clase que gestiona los tratamientos'
+    
+    _columns = {
+            'name':fields.char('Instrucciones', size=256, required=True, readonly=False),
+            'inicio':fields.datetime('Fecha de inicio', required=True, autodate=True),
+            'fin':fields.datetime('Fecha de fin', required=True, autodate=True),
+            'posologia':fields.char('Posologia', size=64, required=True, readonly=False),
+            'medico_id': fields.many2one("medico", "Medico", required=True),
+            'paciente_id': fields.many2one("paciente", "Paciente", required=True),
+            # Falta la relacion con medicamentos
+        }
+tratamiento()
