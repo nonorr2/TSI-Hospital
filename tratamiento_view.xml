@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="tratamiento_form_view">
+			<field name="name">tratamiento_form_view</field>
+			<field name="model">tratamiento</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="form_string">
+					<group string="Tratamiento" colspan="4" col="4">
+						<field name="inicio" />
+						<field name="fin" />
+						<field name="posologia" />
+						<field name="medico_id" />
+						<field name="paciente_id" />
+						<newline />
+						<field name="name" select="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="tratamiento_tree_view">
+			<field name="name">tratamiento_view_tree</field>
+			<field name="model">tratamiento</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="paciente_id" />
+					<field name="posologia" />
+					<field name="inicio" />
+					<field name="fin" />
+					<field name="name" />
+					<field name="medico_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="tratamiento_calendar_view">
+			<field name="name">tratamiento_view_calendar</field>
+			<field name="model">tratamiento</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar color="paciente_id" date_start="inicio" string="Tratamientos">
+					<field name="paciente_id" />
+					<field name="name" />
+				</calendar>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="tratamiento_form_gantt_view">
+			<field name="name">tratamiento_form_gantt_view</field>
+			<field name="model">tratamiento</field>
+			<field name="type">gantt</field>
+			<field name="arch" type="xml">
+				<gantt color="paciente_id" date_stop="fin" date_start="inicio"
+					string="Tratamientos">
+					<level object="paciente_id" link="paciente_id" domain="[]">
+						<field name="name" />
+					</level>
+				</gantt>
+			</field>
+		</record>
+
+		<record id="act_tratamiento" model="ir.actions.act_window">
+			<field name="name">tratamiento</field>
+			<field name="res_model">tratamiento</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree,calendar,gantt</field>
+		</record>
+
+		<menuitem name="Tratamientos" id="tratamientos_submenu"
+			parent="hospital" sequence="100" />
+		<menuitem name="Tratamientos" id="tratamientos_sub_submenu"
+			parent="tratamientos_submenu" sequence="100" action="act_tratamiento" />
+	</data>
+</openerp>
+			
