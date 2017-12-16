@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- Form view -->
+		<record model="ir.ui.view" id="view_aseguradora_form">
+			<field name="name">view_aseguradora_form</field>
+			<field name="model">aseguradora</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Aseguradora">
+					<field name="name" />
+					<field name="direccion" />
+					<field name="cif" />
+					<field name="telefono" />
+					<newline />
+					<notebook colspan="4">
+						<page string="Asegurados">
+							<field name="pacientes_ids" mode="tree" nolabel="1">
+								<tree>
+									<field name="dni" />
+									<field name="numSegurSocial" />
+									<field name="name" />
+									<field name="apellidos" />
+									<field name="direccion" />
+									<field name="email" />
+									<field name="telefono" />
+								</tree>
+							</field>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_aseguradora_tree_view">
+			<field name="name">view_aseguradora_tree</field>
+			<field name="model">aseguradora</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="cif" />
+					<field name="telefono" />
+					<field name="direccion" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Accion -->
+		<record id="act_aseguradora" model="ir.actions.act_window">
+			<field name="name">aseguradora</field>
+			<field name="res_model">aseguradora</field>
+			<field name="view_type">form</field>
+			<field name="view_model">tree,form</field>
+		</record>
+
+		<!-- Menu -->
+		<menuitem id="aseguradora" name="Aseguradoras" parent="hospital"
+			sequence="100" />
+		<menuitem id="aseguradora_submenu" name="Aseguradoras"
+			parent="aseguradora" sequence="100" action="act_aseguradora" />
+
+	</data>
+</openerp>

@@ -19,12 +19,18 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
+from osv import osv
+from osv import fields
 
-import medico
-import cita
-import ambulancia
-import paciente
-import tratamiento
-import prueba
-import hospital
-import aseguradora
+class aseguradora(osv.Model):
+    _name = 'aseguradora'
+    _description = 'aseguradora'
+    
+    _columns = {
+        'name': fields.char('Nombre', size=64, required=True),
+        'direccion': fields.char("Dirección", size=64, required=True),
+        'cif': fields.char('Cif', size=9, required=True),
+        'telefono': fields.integer('Telefono', size=9, required=True),
+        'pacientes_ids':fields.one2many('paciente', 'aseguradora_id', 'Pacientes'),
+    }
+aseguradora()

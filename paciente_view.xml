@@ -19,6 +19,7 @@
 					<field name="direccion" />
 					<field name="email" />
 					<field name="telefono" />
+					<field name="aseguradora_id" />
 					<newline />
 					<notebook colspan="4">
 						<page string="Citas">
@@ -49,6 +50,7 @@
 					<field name="direccion" />
 					<field name="email" />
 					<field name="telefono" />
+					<field name="aseguradora_id" />
 					<field name="citas_ids" />
 				</tree>
 			</field>
