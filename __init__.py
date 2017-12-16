@@ -29,3 +29,4 @@ import prueba
 import hospital
 import aseguradora
 import laboratorio
+import medicamento

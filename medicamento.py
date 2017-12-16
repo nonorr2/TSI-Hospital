@@ -20,18 +20,18 @@
 #
 ##############################################################################
 
-{
-    "name": "Hospital",
-    "version": "1.0",
-    "depends": ["base"],
-    "author": "Grupo1",
-    "category": "Hospital",
-    "description": """
-    Gestion hospitalaria.
-    """,
-    "init_xml": [],
-    'data': ['medico_view.xml','cita_view.xml','ambulancia_view.xml','paciente_view.xml','tratamiento_view.xml','prueba_view.xml','hospital_view.xml','aseguradora_view.xml','laboratorio_view.xml','medicamento_view.xml'],
-    'demo_xml': [],
-    'installable': True,
-    'active': False,
-}
+from osv import osv
+from osv import fields
+
+class medicamento(osv.Model):
+    _name = 'medicamento'
+    _description = 'Clase que representa los medicamentos'
+    
+    _columns = {
+            'name':fields.integer('Id', size=64, required=True, readonly=False),
+            'prospecto':fields.text('Prospecto', size=64, required=True, readonly=False),
+            'nombre':fields.char('Nombre', size=64, required=True, readonly=False),
+            'tratamiento_ids':fields.many2many('tratamiento', 'medicamento_tratamiento_rel', 'tratamiento_ids', 'medicamento_ids', 'Tratamientos'),
+            'laboratorio_ids':fields.many2many('laboratorio', 'medicamento_laboratorio_rel', 'laboratorio_ids', 'medicamento_ids', 'Laboratorios'),
+        }
+medicamento()
