@@ -6,6 +6,7 @@ encoding/aseguradora.py=utf-8
 encoding/cita.py=utf-8
 encoding/hospital.py=utf-8
 encoding/laboratorio.py=utf-8
+encoding/medicamento.py=utf-8
 encoding/medico.py=utf-8
 encoding/paciente.py=utf-8
 encoding/prueba.py=utf-8

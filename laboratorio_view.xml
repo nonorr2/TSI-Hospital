@@ -15,6 +15,16 @@
 					<newline />
 					<field name="direccion" colspan="2"/>
 					</group>
+					<notebook colspan="4">
+						<page string="Medicamentos">
+							<field name="medicamento_ids" mode="tree" nolabel="1">
+								<tree>
+									<field name="nombre" />
+									<field name="prospecto" />
+								</tree>
+							</field>
+						</page>
+					</notebook>
 				</form>
 			</field>
 		</record>
