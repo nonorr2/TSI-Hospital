@@ -19,19 +19,16 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
+from osv import osv
+from osv import fields
 
-{
-    "name": "Hospital",
-    "version": "1.0",
-    "depends": ["base"],
-    "author": "Grupo1",
-    "category": "Hospital",
-    "description": """
-    Gestion hospitalaria.
-    """,
-    "init_xml": [],
-    'data': ['medico_view.xml','cita_view.xml','ambulancia_view.xml','paciente_view.xml','tratamiento_view.xml','prueba_view.xml','hospital_view.xml','aseguradora_view.xml','laboratorio_view.xml'],
-    'demo_xml': [],
-    'installable': True,
-    'active': False,
-}
+class laboratorio(osv.Model):
+    _name = 'laboratorio'
+    _description = 'laboratorio'
+    _columns = {
+                'name':fields.char('Nombre', size=64, required=True, readonly=False),
+                'telefono':fields.integer('Telefono', size=9, required=True, readonly=False),
+                'direccion':fields.char('Direccion', size=64, required=True, readonly=False),
+                #falta relacion con medicamento
+    }
+laboratorio()

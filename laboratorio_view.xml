@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+			
+		<record model="ir.ui.view" id="laboratorio_form_view">
+			<field name="name">laboratorio.form</field>
+			<field name="model">laboratorio</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="form_string">
+				<group string="Laboratorio" colspan="2">
+					<field name="name" select="1" colspan="2"/>
+					<newline />
+					<field name="telefono" colspan="2"/>
+					<newline />
+					<field name="direccion" colspan="2"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_laboratorio_tree_view">
+			<field name="name">view_laboratorio_tree</field>
+			<field name="model">laboratorio</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="telefono" />
+					<field name="direccion" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="act_laboratorio" model="ir.actions.act_window">
+			<field name="name">laboratorio</field>
+			<field name="res_model">laboratorio</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem name="Laboratorios" id="laboratorios_submenu" parent="hospital" sequence="100"/>
+		<menuitem name="Laboratorios" id="laboratorios_sub_submenu" parent="laboratorios_submenu" sequence="100" action="act_laboratorio"/>
+	</data>
+</openerp>
