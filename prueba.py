@@ -32,6 +32,6 @@ class prueba(osv.Model):
         'medico_id': fields.many2one("medico", "Medico", required=True),
         'paciente_id': fields.many2one("paciente", "Paciente", required=True), 
         'descripcion': fields.text("Descripcion", required=True),
-        # 'hospital_id': fields.many2one("hospital", "Hospital", required=True), 
+        #'hospital_id': fields.many2one("hospital", "Hospital", required=True), 
     }
 prueba()

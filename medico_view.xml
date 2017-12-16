@@ -35,6 +35,24 @@
 				</form>
 			</field>
 		</record>
+		
+		<!-- Tree view -->
+ -		<record model="ir.ui.view" id="view_medico_tree">
+ -			<field name="name">view_medico_tree</field>
+ -			<field name="model">medico</field>
+ -			<field name="type">tree</field>
+ -			<field name="arch" type="xml">
+ -				<tree string="medico">
+ -					<field name="name" />
+ -					<field name="apellidos" />
+ -					<field name="dni" />
+ -					<field name="numColegiado" />
+ -					<field name="direccion" />
+ -					<field name="email" />
+ -					<field name="telefono" />
+ -				</tree>
+ -			</field>
+ -		</record>
 
 		<!-- Accion -->
 		<record id="act_medico" model="ir.actions.act_window">
