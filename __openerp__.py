@@ -30,7 +30,7 @@
     Gestion hospitalaria.
     """,
     "init_xml": [],
-    'data': ['medico_view.xml','cita_view.xml','ambulancia_view.xml','paciente_view.xml','tratamiento_view.xml','prueba_view.xml'],
+    'data': ['medico_view.xml','cita_view.xml','ambulancia_view.xml','paciente_view.xml','tratamiento_view.xml','prueba_view.xml','hospital_view.xml'],
     'demo_xml': [],
     'installable': True,
     'active': False,

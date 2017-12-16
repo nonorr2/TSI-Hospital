@@ -26,3 +26,4 @@ import ambulancia
 import paciente
 import tratamiento
 import prueba
+import hospital
