@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- form -->
+		<record model="ir.ui.view" id="prueba_form_view">
+			<field name="name">prueba_form_view</field>
+			<field name="model">prueba</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="form_string">
+					<group string="Prueba Medica" colspan="4" col="4">
+<!-- <field name="hospital_id" /> -->	
+						<field name="medico_id" />
+						<field name="fechaHora" />
+						<field name="paciente_id" />
+						<field name="name" />
+						<newline />
+						<field name="descripcion" colspan="4" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- tree -->
+		<record model="ir.ui.view" id="prueba_tree_view">
+			<field name="name">prueba_view_tree</field>
+			<field name="model">prueba</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+				<!-- <field name="hospital_id" /> -->	
+					<field name="fechaHora" />
+					<field name="medico_id" />
+					<field name="paciente_id" />
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- calendar -->
+		<record model="ir.ui.view" id="prueba_calendar_view">
+			<field name="name">prueba_view_calendar</field>
+			<field name="model">prueba</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar color="paciente_id" date_start="fechaHora"
+					string="Prueba">
+					<field name="paciente_id" />
+					<field name="name" />
+				</calendar>
+			</field>
+		</record>
+
+		<record id="act_prueba" model="ir.actions.act_window">
+			<field name="name">prueba</field>
+			<field name="res_model">prueba</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree,calendar</field>
+		</record>
+
+		<menuitem name="Pruebas Medica" id="prueba_submenu" parent="hospital"
+			sequence="100" />
+		<menuitem name="Pruebas Medica" id="prueba_sub_submenu"
+			parent="prueba_submenu" sequence="100" action="act_prueba" />
+	</data>
+</openerp>

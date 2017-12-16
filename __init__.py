@@ -25,3 +25,4 @@ import cita
 import ambulancia
 import paciente
 import tratamiento
+import prueba

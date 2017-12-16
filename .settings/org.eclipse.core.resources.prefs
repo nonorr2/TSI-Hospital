@@ -5,4 +5,5 @@ encoding/ambulancia.py=utf-8
 encoding/cita.py=utf-8
 encoding/medico.py=utf-8
 encoding/paciente.py=utf-8
+encoding/prueba.py=utf-8
 encoding/tratamiento.py=utf-8

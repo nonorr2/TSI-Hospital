@@ -22,20 +22,16 @@
 from osv import osv
 from osv import fields
 
-class paciente(osv.Model):
-    _name = 'paciente'
-    _description = 'Pacientes del hospital'
- 
+class prueba(osv.Model):
+    _name = 'prueba'
+    _description = 'pruebas de un paciente con un medico'
+    
     _columns = {
-            'name':fields.char('Nombre', size=64, required=True),
-            'dni':fields.char('DNI', size=9, required=True),
-            'numSegurSocial' :fields.integer('Nº Seguridad Social', required=True),
-            'apellidos':fields.char('Apellidos', size=200, required=True),
-            'direccion':fields.char('Dirección', size=200, required=True),
-            'email':fields.char('Email', size=64, required=True),
-            'telefono': fields.integer('Telefono', size=9),
-            'photo': fields.binary('Foto'), 
-            'citas_ids':fields.one2many('cita', 'paciente_id', 'Citas'),
-            'pruebas_ids':fields.one2many('prueba', 'paciente_id', 'Prueba'),
-        }
-paciente()
+        'name': fields.char("Tipo", size=100, required=True),
+        'fechaHora': fields.datetime('Fecha y Hora', required=True, autodate=True),
+        'medico_id': fields.many2one("medico", "Medico", required=True),
+        'paciente_id': fields.many2one("paciente", "Paciente", required=True), 
+        'descripcion': fields.text("Descripcion", required=True),
+        # 'hospital_id': fields.many2one("hospital", "Hospital", required=True), 
+    }
+prueba()
