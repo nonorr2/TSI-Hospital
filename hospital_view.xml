@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+			
+		<!-- Form view -->
+		<record model="ir.ui.view" id="view_hospital_form">
+			<field name="name">view_hospital_form</field>
+			<field name="model">hospital</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="hospital">
+					<group string="Hopital" colspan="4" col="4">
+						<field name="name" />
+						<field name="cif" />
+						<field name="direccion" />
+						<field name="telefono" />
+					</group>
+					<newline />
+					<notebook colspan="4">
+						<page string="Pruebas Medicas">
+							<field name="prueba_ids" mode="tree" nolabel="1">
+								<tree>
+									<field name="name" />									
+									<field name="fechaHora" />
+									<field name="paciente_id" />
+									<field name="medico_id" />
+									<field name="descripcion" />
+								</tree>
+							</field>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+		
+		<!-- Tree view -->
+ 		<record model="ir.ui.view" id="view_hospital_tree">
+ 			<field name="name">view_hospital_tree</field>
+ 			<field name="model">hospital</field>
+ 			<field name="type">tree</field>
+ 			<field name="arch" type="xml">
+ 				<tree string="hospital">
+ 					<field name="name" />
+ 					<field name="cif" />
+ 					<field name="direccion" />
+ 					<field name="telefono" />
+ 				</tree>
+ 			</field>
+ 		</record>
+
+		<!-- Accion -->
+		<record id="act_hospital" model="ir.actions.act_window">
+			<field name="name">hospital</field>
+			<field name="res_model">hospital</field>
+			<field name="view_type">form</field>
+			<field name="view_model">tree,form</field>
+		</record>
+
+		<!-- Menu -->
+		<menuitem id="hospital" name="Hospital" action="act_medico" />
+		<menuitem id="hospital2" name="Hospital" parent="hospital"
+			sequence="100" />
+		<menuitem id="hospital_submenu" name="Hospital" parent="hospital2"
+			sequence="100" action="act_hospital" />
+
+	</data>
+</openerp>
