@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<!-- Inseción de aseguradoras (Falta pacientes_ids) -->
+		<record id="aseguradora01" model="aseguradora">
+			<field name="name">Reale</field>
+			<field name="direccion">C\Palomar 13, Málaga</field>
+			<field name="cif">515496325T</field>
+			<field name="telefono">954632145</field>
+		</record>
+		<record id="aseguradora02" model="aseguradora">
+			<field name="name">Axa</field>
+			<field name="direccion">C\Montecillo 47, Sevilla</field>
+			<field name="cif">35127954F</field>
+			<field name="telefono">963487520</field>
+		</record>
+		<record id="aseguradora02" model="aseguradora">
+			<field name="name">Mapfre</field>
+			<field name="direccion">C\Camino del monte 10, Sevilla</field>
+			<field name="cif">54785412L</field>
+			<field name="telefono">954125478</field>
+		</record>
+
+		<!-- Inserción de pacientes (Falta citas_ids) -->
+		<record id="paciente01" model="paciente">
+			<field name="name">Paco</field>
+			<field name="apellidos">Pérez Mateo</field>
+			<field name="direccion">C\Buen Aire 74, Sevilla</field>
+			<field name="email">paco@prueba.com</field>
+			<field name="telefono">954785412</field>
+			<field name="dni">98745634H</field>
+			<field name="numSegurSocial">412587456</field>
+			<field name="aseguradora_id" ref="aseguradora01"></field>
+		</record>
+		<record id="paciente02" model="paciente">
+			<field name="name">Maria</field>
+			<field name="apellidos">Lobato Calderón</field>
+			<field name="direccion">C\Agusto 212, Sevilla</field>
+			<field name="email">maria@prueba.com</field>
+			<field name="telefono">954125489</field>
+			<field name="dni">32547854K</field>
+			<field name="numSegurSocial">415879652</field>
+			<field name="aseguradora_id" ref="aseguradora01"></field>
+		</record>
+		<record id="paciente03" model="paciente">
+			<field name="name">Luisa</field>
+			<field name="apellidos">Montero Vargas</field>
+			<field name="direccion">C\Julio César 4, Sevilla</field>
+			<field name="email">luisa@prueba.com</field>
+			<field name="telefono">954785412</field>
+			<field name="dni">2354785P</field>
+			<field name="numSegurSocial">415786541</field>
+			<field name="aseguradora_id" ref="aseguradora02"></field>
+		</record>
+		<record id="paciente04" model="paciente">
+			<field name="name">Antonio</field>
+			<field name="apellidos">Ramírez Cobo</field>
+			<field name="direccion">C\Pamplona 14, Sevilla</field>
+			<field name="email">antonio@prueba.com</field>
+			<field name="telefono">624578935</field>
+			<field name="dni">21548965D</field>
+			<field name="numSegurSocial">784523640</field>
+			<field name="aseguradora_id" ref="aseguradora02"></field>
+		</record>
+		<record id="paciente05" model="paciente">
+			<field name="name">Manuela</field>
+			<field name="apellidos">Pérez Cobo</field>
+			<field name="direccion">C\Zaragoza 144, Sevilla</field>
+			<field name="email">manuela@prueba.com</field>
+			<field name="telefono">754215963</field>
+			<field name="dni">45893254T</field>
+			<field name="numSegurSocial">658741235</field>
+			<field name="aseguradora_id" ref="aseguradora03"></field>
+		</record>
+
+		<!-- Inseción de medicos (Falta citas_ids) -->
+		<record id="medico01" model="medico">
+			<field name="name">Alberto</field>
+			<field name="apellidos">Fernández Sevilla</field>
+			<field name="direccion">C\Rioja 74, Sevilla</field>
+			<field name="email">medicoalberto@prueba.com</field>
+			<field name="telefono">954123021</field>
+			<field name="dni">74589512N</field>
+			<field name="numColegiado">4521478532</field>
+		</record>
+		<record id="medico02" model="medico">
+			<field name="name">Olga</field>
+			<field name="apellidos">Fernández Hacha</field>
+			<field name="direccion">C\Peñaflor 24, Sevilla</field>
+			<field name="email">medicoolga@prueba.com</field>
+			<field name="telefono">645214785</field>
+			<field name="dni">36521024L</field>
+			<field name="numColegiado">7458962130</field>
+		</record>
+		<record id="medico03" model="medico">
+			<field name="name">Aurelio</field>
+			<field name="apellidos">Pineda González</field>
+			<field name="direccion">C\Cuevas 52, Sevilla</field>
+			<field name="email">medicoaurelio@prueba.com</field>
+			<field name="telefono">652147896</field>
+			<field name="dni">23014596S</field>
+			<field name="numColegiado">5412302148</field>
+		</record>
+		
+		<!-- Inseción de ambulancias -->
+		<record id="ambulancia01" model="ambulancia">
+			<field name="name">Ambulancia01</field>
+			<field name="matricula">2541FGB</field>
+			<field name="capacidad">3</field>
+		</record>
+		<record id="ambulancia02" model="ambulancia">
+			<field name="name">Ambulancia02</field>
+			<field name="matricula">3245GVS</field>
+			<field name="capacidad">2</field>
+		</record>
+		<record id="ambulancia03" model="ambulancia">
+			<field name="name">Ambulancia03</field>
+			<field name="matricula">8456PHJ</field>
+			<field name="capacidad">1</field>
+		</record>
+		
+		<!-- Inseción de citas -->
+		<record id="cita01" model="cita">
+			<field name="name">01</field>
+			<field name="fechaHora">27/12/2017 12:00:00</field>
+			<field name="medico_id" ref="medico01"></field>
+			<field name="paciente_id" ref="paciente01">medicoalberto@prueba.com</field>
+			<field name="ambulancia_id" ref="ambulancia01"></field>
+			<field name="descripcion">Dolor cervical</field>
+		</record>
+		<record id="cita02" model="cita">
+			<field name="name">02</field>
+			<field name="fechaHora">10/01/2018 11:30:00</field>
+			<field name="medico_id" ref="medico01"></field>
+			<field name="paciente_id" ref="paciente02"></field>
+			<field name="descripcion">Molestia en hombro derecho</field>
+		</record>
+		<record id="cita03" model="cita">
+			<field name="name">03</field>
+			<field name="fechaHora">26/01/2018 10:00:00</field>
+			<field name="medico_id" ref="medico02"></field>
+			<field name="paciente_id" ref="paciente03"></field>
+			<field name="descripcion">Desprendimiento de retina</field>
+		</record>
+		<record id="cita04" model="cita">
+			<field name="name">04</field>
+			<field name="fechaHora">23/12/2017 13:30:00</field>
+			<field name="medico_id" ref="medico03"></field>
+			<field name="paciente_id" ref="paciente04">medicoalberto@prueba.com</field>
+			<field name="descripcion">Dolor de cabeza frecuente</field>
+		</record>
+		<record id="cita05" model="cita">
+			<field name="name">05</field>
+			<field name="fechaHora">29/12/2017 10:45:00</field>
+			<field name="medico_id" ref="medico03"></field>
+			<field name="paciente_id" ref="paciente05"></field>
+			<field name="ambulancia_id" ref="ambulancia02"></field>
+			<field name="descripcion">Rotura de cadera</field>
+		</record>
+		<record id="cita06" model="cita">
+			<field name="name">06</field>
+			<field name="fechaHora">29/12/2017 11:00:00</field>
+			<field name="medico_id" ref="medico03"></field>
+			<field name="paciente_id" ref="paciente01"></field>
+			<field name="descripcion">Nauseas constantes</field>
+		</record>
+		
+		<!-- Inseción de hospitales (falta pruebas_ids) -->
+		<record id="hospital01" model="hospital">
+			<field name="name">Virgen del Rocio</field>
+			<field name="cif">45216985T</field>
+			<field name="direccion">Avenida Alcalde Manuel del Valle 16, Sevilla</field>
+			<field name="telefono">954123658</field>
+		</record>
+		<record id="hospital02" model="hospital">
+			<field name="name">San Juan de Dios</field>
+			<field name="cif">63254126J</field>
+			<field name="direccion">Carretera Huelva S/N, Sevilla</field>
+			<field name="telefono">954785320</field>
+		</record>
+		
+		<!-- Inseción de pruebas médicas -->
+		<record id="prueba01" model="prueba">
+			<field name="name">Electrocardiograma</field>
+			<field name="fechaHora">15/01/2018 09:15:00</field>
+			<field name="medico_id" ref="medico03"></field>
+			<field name="descripcion">Electrocardiograma con contraste</field>
+			<field name="hospital_id" ref="hospital01"></field>
+			<field name="paciente_id" ref="paciente03"></field>
+		</record>
+		<record id="prueba02" model="prueba">
+			<field name="name">Radiografía</field>
+			<field name="fechaHora">4/01/2018 12:15:00</field>
+			<field name="medico_id" ref="medico02"></field>
+			<field name="descripcion">Radiografía de brazo derecho y hombro derecho</field>
+			<field name="hospital_id" ref="hospital02"></field>
+			<field name="paciente_id" ref="paciente01"></field>
+		</record>
+		<record id="prueba03" model="prueba">
+			<field name="name">Cataterismo</field>
+			<field name="fechaHora">26/01/2018 08:30:00</field>
+			<field name="medico_id" ref="medico01"></field>
+			<field name="descripcion">Cataterísmo en la arteria femoral</field>
+			<field name="hospital_id" ref="hospital01"></field>
+			<field name="paciente_id" ref="paciente05"></field>
+		</record>
+	</data>
+</openerp>
