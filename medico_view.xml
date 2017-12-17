@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<!-- Kanban view -->
-		<record model="ir.ui.view" id="medico_kanban_view">
-			<field name="name">medico_kanban_view</field>
+		<!-- Kanban -->
+		<record model="ir.ui.view" id="hospital_medico_kanban_view">
+			<field name="name">hospital_medico_kanban_view</field>
 			<field name="model">medico</field>
+			<field name="type">kanban</field>
 			<field name="arch" type="xml">
 				<kanban>
-					<field name="name" />
 					<templates>
 						<t t-name="kanban-box">
-							<div class="oe_kanban_card">
-								<div class="oe_kanban_content">
-									<h4>
-										<a type="open">
-											<field name="name" />
-										</a>
-									</h4>
+							<div class="oe_resource_vignette">
+								<div class="oe_resource_image">
+									<a type="edit">
+										<img t-att-src="kanban_image('medico', 'photo', record.id.value)"
+											class="oe_resource_picture" />
+									</a>
+								</div>
+								<div class="oe_resource_details">
 									<ul>
+										<!--Here u have to write the ur objects field name which u wnt 
+											to display in kanban view -->
+										<li>
+											<field name="name" />
+										</li>
 										<li>
 											<field name="apellidos" />
 										</li>
 										<li>
-											<field name="dni" />
+											<field name="numColegiado" />
+										</li>
+										<li>
+											<field name="email" />
 										</li>
 									</ul>
 								</div>
@@ -59,7 +68,7 @@
 			<field name="arch" type="xml">
 				<form string="Medico">
 					<group string="Médico" colspan="4" col="4">
-						<field name="foto_medico" widget="image" colspan="4" />
+						<field name="photo" widget="image" colspan="4" />
 						<field name="name" />
 						<field name="apellidos" />
 						<field name="dni" />
@@ -91,7 +100,7 @@
 			<field name="name">medico</field>
 			<field name="res_model">medico</field>
 			<field name="view_type">form</field>
-			<field name="view_model">kanban,tree,form</field>
+			<field name="view_model">tree,form,kanban</field>
 		</record>
 
 		<!-- Menu -->
