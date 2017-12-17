@@ -104,15 +104,15 @@
 
 		<!-- Inseción de ambulancias -->
 		<record id="ambulancia01" model="ambulancia">
-			<field name="matricula">2541FGB</field>
+			<field name="name">2541FGB</field>
 			<field name="capacidad">3</field>
 		</record>
 		<record id="ambulancia02" model="ambulancia">
-			<field name="matricula">3245GVS</field>
+			<field name="name">3245GVS</field>
 			<field name="capacidad">2</field>
 		</record>
 		<record id="ambulancia03" model="ambulancia">
-			<field name="matricula">8456PHJ</field>
+			<field name="name">8456PHJ</field>
 			<field name="capacidad">1</field>
 		</record>
 
@@ -333,7 +333,7 @@
 			<field name="medicamento_ids"
 				eval="[(6,0,[medicamento03,medicamento04,medicamento05,medicamento06,medicamento07, ])]"></field>
 		</record>
-		<record id="laboratorio01" model="laboratorio">
+		<record id="laboratorio03" model="laboratorio">
 			<field name="name">Normon</field>
 			<field name="telefono">915478563</field>
 			<field name="direccion">C\Canalejas 66, Sevilla</field>

@@ -9,7 +9,7 @@
 			<field name="arch" type="xml">
 				<form string="form_string">
 				<group string="Ambulancia" colspan="2">
-					<field name="matricula" colspan="2"/>
+					<field name="name" colspan="2"/>
 					<newline />
 					<field name="capacidad" colspan="2"/>
 					</group>
@@ -23,7 +23,7 @@
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
-					<field name="matricula" />
+					<field name="name" />
 					<field name="capacidad" />
 				</tree>
 			</field>
