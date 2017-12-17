@@ -14,7 +14,7 @@
 			<field name="cif">35127954F</field>
 			<field name="telefono">963487520</field>
 		</record>
-		<record id="aseguradora02" model="aseguradora">
+		<record id="aseguradora03" model="aseguradora">
 			<field name="name">Mapfre</field>
 			<field name="direccion">C\Camino del monte 10, Sevilla</field>
 			<field name="cif">54785412L</field>
@@ -374,11 +374,13 @@
 		</record>
 		<record id="tratamiento04" model="tratamiento">
 			<field name="name">Visitar al especialista si el dolor no remite al
-				terminar el tratamiento.</field>
+				terminar el tratamiento.
+			</field>
 			<field name="inicio">05/01/2018 00:00:00</field>
 			<field name="fin">25/01/2018 00:00:00</field>
 			<field name="posologia">1 comprimido por la mañana en ayunas y otro justo
-				antes de acostarse bajo la lengua.</field>
+				antes de acostarse bajo la lengua.
+			</field>
 			<field name="medico_id" ref="medico02"></field>
 			<field name="paciente_id" ref="paciente05"></field>
 			<field name="medicamento_ids"

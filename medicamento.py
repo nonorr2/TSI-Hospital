@@ -30,7 +30,7 @@ class medicamento(osv.Model):
     _columns = {
             'prospecto':fields.text('Prospecto', size=64, required=True, readonly=False),
             'nombre':fields.char('Nombre', size=64, required=True, readonly=False),
-            'tratamiento_ids':fields.many2many('tratamiento', 'medicamento_tratamiento_rel', 'tratamiento_ids', 'medicamento_ids', 'Tratamientos'),
-            'laboratorio_ids':fields.many2many('laboratorio', 'medicamento_laboratorio_rel', 'laboratorio_ids', 'medicamento_ids', 'Laboratorios'),
+            'tratamiento_ids':fields.many2many('tratamiento', 'medicamento_tratamiento_rel', 'tratamiento_id', 'medicamento_id', 'Tratamientos'),
+            'laboratorio_ids':fields.many2many('laboratorio', 'medicamento_laboratorio_rel', 'laboratorio_id', 'medicamento_id', 'Laboratorios'),
         }
 medicamento()

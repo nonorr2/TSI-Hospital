@@ -29,6 +29,6 @@ class laboratorio(osv.Model):
                 'name':fields.char('Nombre', size=64, required=True, readonly=False),
                 'telefono':fields.integer('Telefono', size=9, required=True, readonly=False),
                 'direccion':fields.char('Direccion', size=64, required=True, readonly=False),
-                'medicamento_ids':fields.many2many('medicamento', 'medicamento_laboratorio_rel', 'medicamento_ids', 'Medicamento'),
+                'medicamento_ids':fields.many2many('medicamento', 'medicamento_laboratorio_rel', 'medicamento_id', 'laboratorio_id', 'Medicamento'),
     }
 laboratorio()
