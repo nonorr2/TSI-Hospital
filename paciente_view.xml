@@ -31,6 +31,29 @@
 								</tree>
 							</field>
 						</page>
+						<page string="Pruebas">
+							<field name="pruebas_ids" mode="tree" nolabel="1">
+								<tree>
+									<field name="name" />
+									<field name="fechaHora" />
+									<field name="medico_id" />
+									<field name="hospital_id" />
+									<field name="descripcion" />
+								</tree>
+							</field>
+						</page>
+						<page string="Tratamientos">
+							<field name="tratamientos_ids" mode="tree" nolabel="1">
+								<tree>
+									<field name="name" />
+									<field name="inicio" />
+									<field name="fin" />
+									<field name="posologia" />
+									<field name="medico_id" />
+									<field name="medicamento_ids" />
+								</tree>
+							</field>
+						</page>
 					</notebook>
 				</form>
 			</field>
