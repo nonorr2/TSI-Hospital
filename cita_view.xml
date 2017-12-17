@@ -39,6 +39,10 @@
 						<newline />
 						<field name="descripcion" colspan="4" />
 					</group>
+					<separator string="Estado de la cita" colspan="4"/>
+				 	<field name='state' widget='statusbar' statusbar_visible="inicio,realizandose,terminado" statusbar_colors='{"start":"blue","realizandose":"yellow","terminada":"red"}' nolabel="1"/>
+					<button name="realizar" states="start" string="Iniciar" colspan="1" icon="gtk-ok"/>
+					<button name="terminar" states="realizandose" string="Terminar" colspan="1" icon="gtk-apply"/>
 				</form>
 			</field>
 		</record>

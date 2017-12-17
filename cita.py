@@ -33,5 +33,9 @@ class cita(osv.Model):
         'paciente_id': fields.many2one("paciente","Paciente", required=True),
         'ambulancia_id': fields.many2one("ambulancia","Ambulancia"),
         'descripcion': fields.text("Descripcion", required=True),
+        'state':fields.selection([('start','Inicio'),
+                                  ('realizandose', 'realizandose'),
+                                  ('terminada','Terminada')],'Estados'),
     }
+    _defaults = {'state':'start', }
 cita()

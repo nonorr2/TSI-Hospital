@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- Declaración del workflow -->
+		<record id="wkf_cita" model="workflow">
+			<field name="name">cita</field>
+			<field name="osv">cita</field>
+			<field name="on_create">True</field>
+		</record>
+		
+		<!-- Declaración de nodos -->
+		<record id="act_start" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_cita" />
+			<field name="flow_start">True</field>
+			<field name="name">start</field>
+			<field name="action">write({'state':'start'})</field>
+			<field name="kind">function</field>
+		</record>
+		
+		<record id="act_realizandose" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_cita" />
+			<field name="name">realizandose</field>
+			<field name="action">write({'state':'realizandose'})</field>
+			<field name="kind">function</field>
+		</record>
+		
+		<record id="act_terminada" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_cita" />
+			<field name="flow_stop">True</field>
+			<field name="name">terminada</field>
+			<field name="action">write({'state':'terminada'})</field>
+			<field name="kind">function</field>
+		</record>
+		
+		<!-- Transiciones -->
+		<record id="transition_inicio_realizandose" model="workflow.transition">
+            <field name="act_from" ref="act_start"/>
+            <field name="act_to" ref="act_realizandose"/>
+            <field name="signal">realizar</field>
+        </record>
+        
+        <record id="transition_realizandose_terminar" model="workflow.transition">
+            <field name="act_from" ref="act_realizandose"/>
+            <field name="act_to" ref="act_terminada"/>
+            <field name="signal">terminar</field>
+        </record>
+		
+		
+
+	</data>
+</openerp>

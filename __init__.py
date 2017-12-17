@@ -20,6 +20,7 @@
 #
 ##############################################################################
 
+import workflow
 import medico
 import cita
 import ambulancia
