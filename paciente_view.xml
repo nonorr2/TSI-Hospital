@@ -79,12 +79,53 @@
 			</field>
 		</record>
 
+		<!-- Kanban -->
+		<record model="ir.ui.view" id="hospital_paciente_kanban_view">
+			<field name="name">hospital_paciente_kanban_view</field>
+			<field name="model">paciente</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+				<kanban>
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_resource_vignette">
+								<div class="oe_resource_image">
+									<a type="edit">
+										<img t-att-src="kanban_image('paciente', 'photo', record.id.value)"
+											class="oe_resource_picture" />
+									</a>
+								</div>
+								<div class="oe_resource_details">
+									<ul>
+										<!--Here u have to write the ur objects field name which u wnt 
+											to display in kanban view -->
+										<li>
+											<field name="name" />
+										</li>
+										<li>
+											<field name="dni" />
+										</li>
+										<li>
+											<field name="apellidos" />
+										</li>
+										<li>
+											<field name="direccion" />
+										</li>
+									</ul>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
 		<!-- Accion -->
 		<record id="act_paciente" model="ir.actions.act_window">
 			<field name="name">paciente</field>
 			<field name="res_model">paciente</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form,tree</field>
+			<field name="view_mode">form,tree,kanban</field>
 		</record>
 
 		<!-- Menu -->
