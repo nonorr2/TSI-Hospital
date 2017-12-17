@@ -1,24 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+		<!-- Kanban view -->
+		<record model="ir.ui.view" id="medico_kanban_view">
+			<field name="name">medico_kanban_view</field>
+			<field name="model">medico</field>
+			<field name="arch" type="xml">
+				<kanban>
+					<field name="name" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_kanban_card">
+								<div class="oe_kanban_content">
+									<h4>
+										<a type="open">
+											<field name="name" />
+										</a>
+									</h4>
+									<ul>
+										<li>
+											<field name="apellidos" />
+										</li>
+										<li>
+											<field name="dni" />
+										</li>
+									</ul>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
 		<!-- Tree view -->
- 		<record model="ir.ui.view" id="view_medico_tree">
- 			<field name="name">view_medico_tree</field>
- 			<field name="model">medico</field>
- 			<field name="type">tree</field>
- 			<field name="arch" type="xml">
- 				<tree string="medico">
- 					<field name="name" />
- 					<field name="apellidos" />
- 					<field name="dni" />
- 					<field name="numColegiado" />
- 					<field name="direccion" />
- 					<field name="email" />
- 					<field name="telefono" />
- 				</tree>
- 			</field>
- 		</record>
-	
+		<record model="ir.ui.view" id="view_medico_tree">
+			<field name="name">view_medico_tree</field>
+			<field name="model">medico</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="medico">
+					<field name="name" />
+					<field name="apellidos" />
+					<field name="dni" />
+					<field name="numColegiado" />
+					<field name="direccion" />
+					<field name="email" />
+					<field name="telefono" />
+				</tree>
+			</field>
+		</record>
+
 		<!-- Form view -->
 		<record model="ir.ui.view" id="view_medico_form">
 			<field name="name">view_medico_form</field>
@@ -52,14 +84,14 @@
 					</notebook>
 				</form>
 			</field>
-		</record>		
+		</record>
 
 		<!-- Accion -->
 		<record id="act_medico" model="ir.actions.act_window">
 			<field name="name">medico</field>
 			<field name="res_model">medico</field>
 			<field name="view_type">form</field>
-			<field name="view_model">tree,form</field>
+			<field name="view_model">kanban,tree,form</field>
 		</record>
 
 		<!-- Menu -->

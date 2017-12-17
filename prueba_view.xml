@@ -58,9 +58,9 @@
 			<field name="view_mode">form,tree,calendar</field>
 		</record>
 
-		<menuitem name="Pruebas Medica" id="prueba_submenu" parent="hospital"
+		<menuitem name="Pruebas Medicas" id="prueba_submenu" parent="hospital"
 			sequence="100" />
-		<menuitem name="Pruebas Medica" id="prueba_sub_submenu"
+		<menuitem name="Pruebas Medicas" id="prueba_sub_submenu"
 			parent="prueba_submenu" sequence="100" action="act_prueba" />
 	</data>
 </openerp>
