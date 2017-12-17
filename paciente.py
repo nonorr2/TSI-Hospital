@@ -37,6 +37,7 @@ class paciente(osv.Model):
             'photo': fields.binary('Foto'), 
             'citas_ids':fields.one2many('cita', 'paciente_id', 'Citas'),
             'pruebas_ids':fields.one2many('prueba', 'paciente_id', 'Prueba'),
+            'tratamientos_ids':fields.one2many('tratamiento', 'paciente_id', 'Paciente'),
             'aseguradora_id': fields.many2one("aseguradora","Aseguradora"),
         }
 paciente()

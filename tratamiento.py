@@ -34,6 +34,6 @@ class tratamiento(osv.Model):
             'posologia':fields.char('Posologia', size=64, required=True, readonly=False),
             'medico_id': fields.many2one("medico", "Medico", required=True),
             'paciente_id': fields.many2one("paciente", "Paciente", required=True),
-            # Falta la relacion con medicamentos
+            'medicamento_ids':fields.many2many('medicamento','medicamento_tratamiento_rel','tratamiento_id','Medicamento'),
         }
 tratamiento()
