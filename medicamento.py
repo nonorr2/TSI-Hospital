@@ -28,7 +28,6 @@ class medicamento(osv.Model):
     _description = 'Clase que representa los medicamentos'
     
     _columns = {
-            'name':fields.integer('Id', size=64, required=True, readonly=False),
             'prospecto':fields.text('Prospecto', size=64, required=True, readonly=False),
             'nombre':fields.char('Nombre', size=64, required=True, readonly=False),
             'tratamiento_ids':fields.many2many('tratamiento', 'medicamento_tratamiento_rel', 'tratamiento_ids', 'medicamento_ids', 'Tratamientos'),

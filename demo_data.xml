@@ -101,24 +101,21 @@
 			<field name="dni">23014596S</field>
 			<field name="numColegiado">5412302148</field>
 		</record>
-		
+
 		<!-- Inseción de ambulancias -->
 		<record id="ambulancia01" model="ambulancia">
-			<field name="name">Ambulancia01</field>
 			<field name="matricula">2541FGB</field>
 			<field name="capacidad">3</field>
 		</record>
 		<record id="ambulancia02" model="ambulancia">
-			<field name="name">Ambulancia02</field>
 			<field name="matricula">3245GVS</field>
 			<field name="capacidad">2</field>
 		</record>
 		<record id="ambulancia03" model="ambulancia">
-			<field name="name">Ambulancia03</field>
 			<field name="matricula">8456PHJ</field>
 			<field name="capacidad">1</field>
 		</record>
-		
+
 		<!-- Inseción de citas -->
 		<record id="cita01" model="cita">
 			<field name="name">01</field>
@@ -164,12 +161,13 @@
 			<field name="paciente_id" ref="paciente01"></field>
 			<field name="descripcion">Nauseas constantes</field>
 		</record>
-		
+
 		<!-- Inseción de hospitales (falta pruebas_ids) -->
 		<record id="hospital01" model="hospital">
 			<field name="name">Virgen del Rocio</field>
 			<field name="cif">45216985T</field>
-			<field name="direccion">Avenida Alcalde Manuel del Valle 16, Sevilla</field>
+			<field name="direccion">Avenida Alcalde Manuel del Valle 16, Sevilla
+			</field>
 			<field name="telefono">954123658</field>
 		</record>
 		<record id="hospital02" model="hospital">
@@ -178,7 +176,7 @@
 			<field name="direccion">Carretera Huelva S/N, Sevilla</field>
 			<field name="telefono">954785320</field>
 		</record>
-		
+
 		<!-- Inseción de pruebas médicas -->
 		<record id="prueba01" model="prueba">
 			<field name="name">Electrocardiograma</field>
@@ -192,7 +190,8 @@
 			<field name="name">Radiografía</field>
 			<field name="fechaHora">4/01/2018 12:15:00</field>
 			<field name="medico_id" ref="medico02"></field>
-			<field name="descripcion">Radiografía de brazo derecho y hombro derecho</field>
+			<field name="descripcion">Radiografía de brazo derecho y hombro derecho
+			</field>
 			<field name="hospital_id" ref="hospital02"></field>
 			<field name="paciente_id" ref="paciente01"></field>
 		</record>
@@ -203,6 +202,187 @@
 			<field name="descripcion">Cataterísmo en la arteria femoral</field>
 			<field name="hospital_id" ref="hospital01"></field>
 			<field name="paciente_id" ref="paciente05"></field>
+		</record>
+
+		<!-- Inseción de medicamentos (falta laboratorio_ids, tratamiento_ids) -->
+		<record id="medicamento01" model="medicamento">
+			<field name="prospecto">Antes de tomar ibuprofeno Normon. No tome
+				ibuprofeno Normon: Si es alérgico (hipersensible) al ibuprofeno, a
+				otros medicamentos del grupo de los antiinflamatorios no esteroideos
+				(AINEs), a la aspirina o a cualquiera de los demás componentes de
+				este medicamento.
+			</field>
+			<field name="nombre">Ibuprofeno</field>
+		</record>
+		<record id="medicamento02" model="medicamento">
+			<field name="prospecto">Paracetamol Kern Pharma pertenece al grupo de
+				medicamentos llamados analgésicos y antipiréticos. Está indicado
+				para el alivio o tratamiento del dolor ocasional leve o moderado,
+				como dolor de cabeza, dental, muscular (contracturas) o de espalda
+				(lumbago) y en estados febriles. Debe consultar al médico si los
+				síntomas empeoran o persisten después de 5 días o la fiebre más de 3
+				días.
+			</field>
+			<field name="nombre">Paracetamol</field>
+		</record>
+		<record id="medicamento03" model="medicamento">
+			<field name="prospecto">Dolalgial es un medicamento analgésico que
+				pertenece a un grupo de medicamentos denominados antiinflamatorios
+				no esteroideos. Es un medicamento eficaz para reducir el dolor.
+				Dolalgial está indicado en dolores de intensidad leve a moderada.
+			</field>
+			<field name="nombre">Dolagial</field>
+		</record>
+		<record id="medicamento04" model="medicamento">
+			<field name="prospecto">Este medicamento pertenece a un grupo de
+				medicamentos llamado “inhibidores de la alfa-glucosidasa”. Se
+				utiliza en el tratamiento de pacientes adultos con diabetes mellitus
+				no dependiente de insulina (diabetes de tipo 2), cuando la dieta y
+				el ejercicio no sean suficientes para controlar la glucemia y
+				también se puede administrar junto a otros medicamentos
+				antidiabéticos (como la metformina, las sulfonilureas o la insulina)
+				cuando no sean suficientes para controlar la glucemia. Actúa
+				disminuyendo la velocidad de degradación de los carbohidratos
+				(azúcares complejos) después de cada comida y, consecuentemente,
+				reduciendo la glucemia.
+			</field>
+			<field name="nombre">Acarbosa</field>
+		</record>
+		<record id="medicamento05" model="medicamento">
+			<field name="prospecto">PREMARIN (estrógenos conjugados, USP) para
+				administración oral contiene unamezcla de estrógenos exclusivamente
+				naturales, obtenidos de la orina de las yeguaspreñadas, presentes en
+				forma de sales sódicas de sulfatos de estrógeno solubles en agua.Es
+				una mezcla de sulfato sódico de estrona y sulfato sódico de
+				equilina. Contiene comocomponentes concomitantes, en forma de
+				conjugados de sulfato sódico, 17-estradiol,17-dihidroequilina,
+				17-dihidroequilenina, 17-dihidroequilina, 17-estradiol,
+				estrona,equilina, 17-dihidroequilenina, 8,9-dehidroestrona y
+				equilenina.
+			</field>
+			<field name="nombre">Premarin</field>
+		</record>
+		<record id="medicamento06" model="medicamento">
+			<field name="prospecto">Dormidina doxilamina es un medicamento que contiene
+				el principio activo hidrogenosuccinato de doxilamina. La doxilamina
+				pertenece a un grupo de medicamentos llamados antihistamínicos, que
+				tienen propiedades sedantes. Está indicado en el tratamiento
+				sintomático del insomnio ocasional en mayores de 18 años. Debe
+				consultar a un médico si empeora o si no mejora después de 7 días.
+			</field>
+			<field name="nombre">Dormidina</field>
+		</record>
+		<record id="medicamento07" model="medicamento">
+			<field name="prospecto">Meloxicam pertenece al grupo de medicamentos
+				denominados antiinflamatorios no esteroideos (AINEs). Meloxicam está
+				indicado en adultos y niños mayores de 15 años
+			</field>
+			<field name="nombre">Meloxicam</field>
+		</record>
+		<record id="medicamento08" model="medicamento">
+			<field name="prospecto">Diazepam Qualigen contiene como principio activo
+				diazepam, que pertenece al grupo de medicamentos denominados
+				benzodiazepinas. El diazepam tiene efectos tranquilizantes,
+				sedantes, relajantes musculares y anticonvulsivantes. Los médicos
+				recetan Diazepam Qualigen a las personas que presentan síntomas de
+				ansiedad, agitación y tensión psíquica producidos por estados
+				psiconeuróticos y trastornos situacionales transitorios. Las
+				benzodiazepinas sólo están indicadas para el tratamiento de un
+				trastorno intenso, que limite su actividad o le someta a una
+				situación de estrés importante. También puede ser útil para el
+				alivio de los síntomas de agitación aguda, temblor y alucinaciones
+				en pacientes con síndrome de abstinencia al alcohol.
+			</field>
+			<field name="nombre">Diazepam</field>
+		</record>
+		<record id="medicamento09" model="medicamento">
+			<field name="prospecto">El principio activo de Buscapina pertenece a un
+				grupo de medicamentos denominados Alcaloides semisintéticos de la
+				Belladona, compuestos de amonio cuaternario. Posee acción
+				antiespasmódica sobre el músculo liso de los tractos
+				gastrointestinal, biliar y genitourinario. Buscapina se utiliza para
+				el tratamiento de los espasmos del tracto gastrointestinal, espasmos
+				y trastornos de la motilidad (disquinesias) de las vías biliares y
+				espasmos del tracto genitourinario, en adultos y niños mayores de 6
+				años.
+			</field>
+			<field name="nombre">Buscapina</field>
+		</record>
+		<record id="medicamento10" model="medicamento">
+			<field name="prospecto"> El principio activo de Tolterodina Pharmacia es
+				tolterodina. Tolterodina es un fármaco que pertenece al grupo de
+				medicamentos denominados antimuscarínicos. Tolterodina Pharmacia se
+				utiliza para el tratamiento de los síntomas del síndrome de vejiga
+				hiperactiva.
+			</field>
+			<field name="nombre">Tolterodina</field>
+		</record>
+
+		<!-- Inseción de laboratorios -->
+		<record id="laboratorio01" model="laboratorio">
+			<field name="name">Pfizer</field>
+			<field name="telefono">954785632</field>
+			<field name="direccion">C\Granada 3, Madrid</field>
+			<field name="medicamento_ids"
+				eval="[(6,0,[medicamento01,medicamento02,medicamento03,medicamento04,medicamento05, ])]"></field>
+		</record>
+		<record id="laboratorio02" model="laboratorio">
+			<field name="name">Teva Pharma</field>
+			<field name="telefono">912365489</field>
+			<field name="direccion">C\Molina 87, Barcelona</field>
+			<field name="medicamento_ids"
+				eval="[(6,0,[medicamento03,medicamento04,medicamento05,medicamento06,medicamento07, ])]"></field>
+		</record>
+		<record id="laboratorio01" model="laboratorio">
+			<field name="name">Normon</field>
+			<field name="telefono">915478563</field>
+			<field name="direccion">C\Canalejas 66, Sevilla</field>
+			<field name="medicamento_ids"
+				eval="[(6,0,[medicamento06,medicamento07,medicamento08,medicamento09,medicamento10, ])]"></field>
+		</record>
+
+		<!-- Inseción de tratamientos -->
+		<record id="tratamiento01" model="tratamiento">
+			<field name="name">Guardar reposo absoluto.</field>
+			<field name="inicio">26/01/2018 00:00:00</field>
+			<field name="fin">02/02/2018 00:00:00</field>
+			<field name="posologia">3 comprimidos cada 8h.</field>
+			<field name="medico_id" ref="medico01"></field>
+			<field name="paciente_id" ref="paciente01"></field>
+			<field name="medicamento_ids"
+				eval="[(6,0,[medicamento02,medicamento05,medicamento09, ])]"></field>
+		</record>
+		<record id="tratamiento02" model="tratamiento">
+			<field name="name">Hacer ejercicio 2 veces por semana.</field>
+			<field name="inicio">01/01/2018 00:00:00</field>
+			<field name="fin">25/01/2018 00:00:00</field>
+			<field name="posologia">1 comprimido cada 4h.</field>
+			<field name="medico_id" ref="medico02"></field>
+			<field name="paciente_id" ref="paciente02"></field>
+			<field name="medicamento_ids"
+				eval="[(6,0,[medicamento01,medicamento07,medicamento10, ])]"></field>
+		</record>
+		<record id="tratamiento03" model="tratamiento">
+			<field name="name">No hacer esfuerzos.</field>
+			<field name="inicio">26/01/2018 00:00:00</field>
+			<field name="fin">06/04/2018 00:00:00</field>
+			<field name="posologia">2 sobres diarios y un comprimido por la mañana.
+			</field>
+			<field name="medico_id" ref="medico03"></field>
+			<field name="paciente_id" ref="paciente03"></field>
+			<field name="medicamento_ids" eval="[(6,0,[medicamento06,medicamento04, ])]"></field>
+		</record>
+		<record id="tratamiento04" model="tratamiento">
+			<field name="name">Visitar al especialista si el dolor no remite al
+				terminar el tratamiento.</field>
+			<field name="inicio">05/01/2018 00:00:00</field>
+			<field name="fin">25/01/2018 00:00:00</field>
+			<field name="posologia">1 comprimido por la mañana en ayunas y otro justo
+				antes de acostarse bajo la lengua.</field>
+			<field name="medico_id" ref="medico02"></field>
+			<field name="paciente_id" ref="paciente05"></field>
+			<field name="medicamento_ids"
+				eval="[(6,0,[medicamento01,medicamento03,medicamento05, ])]"></field>
 		</record>
 	</data>
 </openerp>
