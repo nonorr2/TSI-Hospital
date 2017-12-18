@@ -55,12 +55,12 @@
 			<field name="name">prueba</field>
 			<field name="res_model">prueba</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form,tree,calendar</field>
+			<field name="view_model">form,tree,calendar</field>
 		</record>
 
 		<menuitem name="Pruebas Medicas" id="prueba_submenu" parent="hospital"
-			sequence="100" />
+			sequence="150" />
 		<menuitem name="Pruebas Medicas" id="prueba_sub_submenu"
-			parent="prueba_submenu" sequence="100" action="act_prueba" />
+			parent="prueba_submenu" sequence="150" action="act_prueba" />
 	</data>
 </openerp>

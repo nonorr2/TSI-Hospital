@@ -56,9 +56,9 @@
 
 		<!-- Menu -->
 		<menuitem id="aseguradora" name="Aseguradoras" parent="hospital"
-			sequence="100" />
+			sequence="160" />
 		<menuitem id="aseguradora_submenu" name="Aseguradoras"
-			parent="aseguradora" sequence="100" action="act_aseguradora" />
+			parent="aseguradora" sequence="160" action="act_aseguradora" />
 
 	</data>
 </openerp>

@@ -77,13 +77,13 @@
 			<field name="name">tratamiento</field>
 			<field name="res_model">tratamiento</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form,tree,calendar,gantt</field>
+			<field name="view_model">form,tree,calendar,gantt</field>
 		</record>
 
 		<menuitem name="Tratamientos" id="tratamientos_submenu"
-			parent="hospital" sequence="100" />
+			parent="hospital" sequence="140" />
 		<menuitem name="Tratamientos" id="tratamientos_sub_submenu"
-			parent="tratamientos_submenu" sequence="100" action="act_tratamiento" />
+			parent="tratamientos_submenu" sequence="140" action="act_tratamiento" />
 	</data>
 </openerp>
 			

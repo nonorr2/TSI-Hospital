@@ -104,9 +104,8 @@
 		</record>
 
 		<!-- Menu -->
-		<menuitem id="hospital" name="Hospital" action="act_medico" />
 		<menuitem id="medico" name="Medicos" parent="hospital"
-			sequence="100" />
+			sequence="110" />
 		<menuitem id="medico_submenu" name="Medicos" parent="medico"
 			sequence="100" action="act_medico" />
 

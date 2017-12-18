@@ -51,11 +51,10 @@
 		</record>
 
 		<!-- Menu -->
-		<menuitem id="hospital" name="Hospital" action="act_medico" />
 		<menuitem id="medicamento" name="Medicamento" parent="hospital"
-			sequence="100" />
+			sequence="180" />
 		<menuitem id="medicamento_submenu" name="Medicamentos" parent="medicamento"
-			sequence="100" action="act_medicamento" />
+			sequence="180" action="act_medicamento" />
 
 	</data>
 </openerp>

@@ -125,14 +125,14 @@
 			<field name="name">paciente</field>
 			<field name="res_model">paciente</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">kanban,form,tree</field>
+			<field name="view_model">kanban,form,tree</field>
 		</record>
 
 		<!-- Menu -->
 		<menuitem name="Pacientes" id="paciente_submenu" parent="hospital"
-			sequence="160" />
+			sequence="190" />
 		<menuitem name="Pacientes" id="ver_paciente_submenu" parent="paciente_submenu"
-			sequence="170" action="act_paciente" />
+			sequence="190" action="act_paciente" />
 
 	</data>
 </openerp>

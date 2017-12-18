@@ -57,7 +57,7 @@
 		</record>
 
 		<!-- Menu -->
-		<menuitem id="hospital" name="Hospital" action="act_medico" />
+		<menuitem id="hospital" name="Hospital" action="act_hospital" />
 		<menuitem id="hospital2" name="Hospital" parent="hospital"
 			sequence="100" />
 		<menuitem id="hospital_submenu" name="Hospital" parent="hospital2"
