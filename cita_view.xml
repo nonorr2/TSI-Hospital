@@ -58,6 +58,7 @@
 					<field name="medico_id" />
 					<field name="ambulancia_id" />
 					<field name="descripcion" />
+					<field name="state" />
 				</tree>
 			</field>
 		</record>
