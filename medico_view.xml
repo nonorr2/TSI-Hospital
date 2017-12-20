@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<!-- Kanban -->
-		<record model="ir.ui.view" id="hospital_medico_kanban_view">
-			<field name="name">hospital_medico_kanban_view</field>
-			<field name="model">medico</field>
-			<field name="type">kanban</field>
-			<field name="arch" type="xml">
-				<kanban>
-					<templates>
-						<t t-name="kanban-box">
-							<div class="oe_resource_vignette">
-								<div class="oe_resource_image">
-									<a type="edit">
-										<img t-att-src="kanban_image('medico', 'photo', record.id.value)"
-											class="oe_resource_picture" />
-									</a>
-								</div>
-								<div class="oe_resource_details">
-									<ul>
-										<!--Here u have to write the ur objects field name which u wnt 
-											to display in kanban view -->
-										<li>
-											<field name="name" />
-										</li>
-										<li>
-											<field name="apellidos" />
-										</li>
-										<li>
-											<field name="numColegiado" />
-										</li>
-										<li>
-											<field name="email" />
-										</li>
-									</ul>
-								</div>
-							</div>
-						</t>
-					</templates>
-				</kanban>
-			</field>
-		</record>
 
 		<!-- Tree view -->
 		<record model="ir.ui.view" id="view_medico_tree">
@@ -100,12 +60,13 @@
 			<field name="name">medico</field>
 			<field name="res_model">medico</field>
 			<field name="view_type">form</field>
-			<field name="view_model">tree,form,kanban</field>
+			<field name="view_mode">tree,form</field>
 		</record>
 
 		<!-- Menu -->
+		<menuitem id="hospital" name="Hospital" action="act_medico" />
 		<menuitem id="medico" name="Medicos" parent="hospital"
-			sequence="110" />
+			sequence="100" />
 		<menuitem id="medico_submenu" name="Medicos" parent="medico"
 			sequence="100" action="act_medico" />
 

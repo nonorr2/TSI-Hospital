@@ -53,11 +53,10 @@
 			<field name="name">hospital</field>
 			<field name="res_model">hospital</field>
 			<field name="view_type">form</field>
-			<field name="view_model">tree,form</field>
+			<field name="view_mode">tree,form</field>
 		</record>
 
 		<!-- Menu -->
-		<menuitem id="hospital" name="Hospital" action="act_hospital" />
 		<menuitem id="hospital2" name="Hospital" parent="hospital"
 			sequence="100" />
 		<menuitem id="hospital_submenu" name="Hospital" parent="hospital2"

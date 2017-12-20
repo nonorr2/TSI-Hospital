@@ -48,14 +48,14 @@
 			<field name="name">medicamento</field>
 			<field name="res_model">medicamento</field>
 			<field name="view_type">form</field>
-			<field name="view_model">tree,form</field>
+			<field name="view_mode">tree,form</field>
 		</record>
 
-		<!-- Menu -->
+		<!-- Menu -->		
 		<menuitem id="medicamento" name="Medicamento" parent="hospital"
-			sequence="180" />
+			sequence="100" />
 		<menuitem id="medicamento_submenu" name="Medicamentos" parent="medicamento"
-			sequence="180" action="act_medicamento" />
+			sequence="100" action="act_medicamento" />
 
 	</data>
 </openerp>

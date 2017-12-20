@@ -46,10 +46,10 @@
 			<field name="name">laboratorio</field>
 			<field name="res_model">laboratorio</field>
 			<field name="view_type">form</field>
-			<field name="view_model">tree,form</field>
+			<field name="view_mode">tree,form</field>
 		</record>
 		
-		<menuitem name="Laboratorios" id="laboratorios_submenu" parent="hospital" sequence="170"/>
-		<menuitem name="Laboratorios" id="laboratorios_sub_submenu" parent="laboratorios_submenu" sequence="170" action="act_laboratorio"/>
+		<menuitem name="Laboratorios" id="laboratorios_submenu" parent="hospital" sequence="100"/>
+		<menuitem name="Laboratorios" id="laboratorios_sub_submenu" parent="laboratorios_submenu" sequence="100" action="act_laboratorio"/>
 	</data>
 </openerp>
