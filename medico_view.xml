@@ -38,6 +38,9 @@
 						<field name="email" />
 						<field name="telefono" />
 						<field name="num_citas" />
+						<newline></newline>
+						<separator></separator>
+						<button name="eliminaCitas" string="Liberar agenda" type="object"></button>
 					</group>
 					<newline />
 					<notebook colspan="4">
@@ -48,6 +51,7 @@
 									<field name="paciente_id" />
 									<field name="fechaHora" />
 									<field name="ambulancia_id" />
+									<field name="state" />
 									<field name="descripcion"></field>
 								</tree>
 							</field>

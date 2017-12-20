@@ -33,4 +33,6 @@ class aseguradora(osv.Model):
         'telefono': fields.integer('Telefono', size=9, required=True),
         'pacientes_ids':fields.one2many('paciente', 'aseguradora_id', 'Pacientes'),
     }
+    
+    _sql_constraints=[('cif_ase_uniq','unique (cif)','El cif ya existe')]
 aseguradora()

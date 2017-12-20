@@ -29,4 +29,6 @@ class ambulancia(osv.Model):
                 'name':fields.char('Matricula', size=7, required=True, readonly=False),
                 'capacidad':fields.integer('Capacidad', required=True, readonly=False),
     }
+    
+    _sql_constraints=[('mat_amb_uniq','unique (name)','La matricula ya existe')]
 ambulancia()

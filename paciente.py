@@ -40,4 +40,6 @@ class paciente(osv.Model):
             'tratamientos_ids':fields.one2many('tratamiento', 'paciente_id', 'Paciente'),
             'aseguradora_id': fields.many2one("aseguradora","Aseguradora"),
         }
+    
+    _sql_constraints=[('dni_pac_uniq','unique (dni)','El dni ya existe'),('dni_segsoc_uniq','unique (numSegurSocial)','El numero de la seguridad social ya existe')]
 paciente()

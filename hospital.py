@@ -33,4 +33,6 @@ class hospital(osv.Model):
             'telefono':fields.char('Telefono', size=9, required=True),
             'prueba_ids':fields.one2many('prueba', 'hospital_id', 'Prueba'),
         }
+    
+    _sql_constraints=[('cif_hos_uniq','unique (cif)','El cif ya existe')]
 hospital()

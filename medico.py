@@ -35,6 +35,10 @@ class medico(osv.Model):
             
         return res
     
+    def _eliminaCitas(self, cr, uid, ids, field, arg,context=None):
+        res = self.write(cr,uid,ids,{'cita_ids':[ (5, ) ]}, context=None) 
+        return res
+    
     _columns = {
             'name':fields.char('Nombre', size=64, required=True, readonly=False),
             'apellidos':fields.char('Apellidos', size=64, required=True, readonly=False),
@@ -47,4 +51,7 @@ class medico(osv.Model):
             'cita_ids':fields.one2many('cita','medico_id','Citas'),
             'num_citas': fields.function(_numeroCitas, type='integer', string='Número de citas', store = True),
         }
+    
+    _sql_constraints=[('dni_med_uniq','unique (dni)','El dni ya existe'),('numcol_med_uniq','unique (numColegiado)','El numero de colegiado ya existe')]
+
 medico()

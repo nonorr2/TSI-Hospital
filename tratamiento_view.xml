@@ -77,7 +77,7 @@
 			<field name="name">tratamiento</field>
 			<field name="res_model">tratamiento</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form,tree,calendar,gantt</field>
+			<field name="view_mode">tree,form,calendar,gantt</field>
 		</record>
 
 		<menuitem name="Tratamientos" id="tratamientos_submenu"
