@@ -25,7 +25,7 @@ from osv import fields
 class cita(osv.Model):
     _name = 'cita'
     _description = 'cita de un paciente con un medico'
-    
+
     _columns = {
         'name': fields.integer('Id', size=64, required=True),
         'fechaHora': fields.datetime('Fecha y Hora',required=True, autodate = True),

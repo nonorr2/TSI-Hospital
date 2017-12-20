@@ -27,6 +27,14 @@ class medico(osv.Model):
     _name = 'medico'
     _description = 'Clase que gestiona las operaciones de un medico'
     
+    def _numeroCitas(self, cr, uid, ids, field, arg,context=None):
+        res = {}
+        
+        for medico in self.browse(cr, uid, ids, context=context):
+            res[medico.id] = len(medico.cita_ids)
+            
+        return res
+    
     _columns = {
             'name':fields.char('Nombre', size=64, required=True, readonly=False),
             'apellidos':fields.char('Apellidos', size=64, required=True, readonly=False),
@@ -37,5 +45,6 @@ class medico(osv.Model):
             'telefono':fields.char('Teléfono', size=9, required=True, readonly=False),
             'photo':fields.binary('Foto'),
             'cita_ids':fields.one2many('cita','medico_id','Citas'),
+            'num_citas': fields.function(_numeroCitas, type='integer', string='Número de citas', store = True),
         }
 medico()

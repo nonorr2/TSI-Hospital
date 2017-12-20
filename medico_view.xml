@@ -16,6 +16,7 @@
 					<field name="direccion" />
 					<field name="email" />
 					<field name="telefono" />
+					<field name="num_citas" />
 				</tree>
 			</field>
 		</record>
@@ -36,6 +37,7 @@
 						<field name="direccion" />
 						<field name="email" />
 						<field name="telefono" />
+						<field name="num_citas" />
 					</group>
 					<newline />
 					<notebook colspan="4">
@@ -46,7 +48,7 @@
 									<field name="paciente_id" />
 									<field name="fechaHora" />
 									<field name="ambulancia_id" />
-									<field name="descripcion" />
+									<field name="descripcion"></field>
 								</tree>
 							</field>
 						</page>
@@ -55,12 +57,24 @@
 			</field>
 		</record>
 
+		<record model="ir.ui.view" id="view_medico_graph">
+			<field name="name">view_medico_graph</field>
+			<field name="model">medico</field>
+			<field name="type">graph</field>
+			<field name="arch" type="xml">
+				<graph string="Numero de citas por médico" type="pie">
+					<field name="name" />
+					<field name="num_citas" />
+				</graph>
+			</field>
+		</record>
+
 		<!-- Accion -->
 		<record id="act_medico" model="ir.actions.act_window">
 			<field name="name">medico</field>
 			<field name="res_model">medico</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form,graph</field>
 		</record>
 
 		<!-- Menu -->

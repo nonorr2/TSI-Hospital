@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <openerp>
 	<data>
-		<!-- Inseción de aseguradoras (Falta pacientes_ids) -->
+		<!-- Inseción de aseguradoras  -->
 		<record id="aseguradora01" model="aseguradora">
 			<field name="name">Reale</field>
 			<field name="direccion">C\Palomar 13, Málaga</field>
@@ -21,7 +21,7 @@
 			<field name="telefono">954125478</field>
 		</record>
 
-		<!-- Inserción de pacientes (Falta citas_ids) -->
+		<!-- Inserción de pacientes  -->
 		<record id="paciente01" model="paciente">
 			<field name="name">Paco</field>
 			<field name="apellidos">Pérez Mateo</field>
@@ -73,7 +73,7 @@
 			<field name="aseguradora_id" ref="aseguradora03"></field>
 		</record>
 
-		<!-- Inseción de medicos (Falta citas_ids) -->
+		<!-- Inseción de medicos -->
 		<record id="medico01" model="medico">
 			<field name="name">Alberto</field>
 			<field name="apellidos">Fernández Sevilla</field>
@@ -162,7 +162,7 @@
 			<field name="descripcion">Nauseas constantes</field>
 		</record>
 
-		<!-- Inseción de hospitales (falta pruebas_ids) -->
+		<!-- Inseción de hospitales -->
 		<record id="hospital01" model="hospital">
 			<field name="name">Virgen del Rocio</field>
 			<field name="cif">45216985T</field>
@@ -175,6 +175,12 @@
 			<field name="cif">63254126J</field>
 			<field name="direccion">Carretera Huelva S/N, Sevilla</field>
 			<field name="telefono">954785320</field>
+		</record>
+		<record id="hospital03" model="hospital">
+			<field name="name">Virgen Macarena</field>
+			<field name="cif">54875632V</field>
+			<field name="direccion">Calle Dr. Fedriani 3, Sevilla</field>
+			<field name="telefono">954125632</field>
 		</record>
 
 		<!-- Inseción de pruebas médicas -->
@@ -204,7 +210,7 @@
 			<field name="paciente_id" ref="paciente05"></field>
 		</record>
 
-		<!-- Inseción de medicamentos (falta laboratorio_ids, tratamiento_ids) -->
+		<!-- Inseción de medicamentos -->
 		<record id="medicamento01" model="medicamento">
 			<field name="prospecto">Antes de tomar ibuprofeno Normon. No tome
 				ibuprofeno Normon: Si es alérgico (hipersensible) al ibuprofeno, a
