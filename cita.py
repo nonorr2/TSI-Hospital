@@ -26,8 +26,16 @@ class cita(osv.Model):
     _name = 'cita'
     _description = 'cita de un paciente con un medico'
 
+    def _recuperarID(self, cr, uid, ids, field, arg,context=None):
+        res = {}
+        
+        for cita in self.browse(cr, uid, ids, context=context):
+            res[cita.id] = cita.id
+            
+        return res
+
     _columns = {
-        'name': fields.integer('Id', size=64, required=True),
+        'name': fields.function(_recuperarID, type='integer', string='Id Cita', store=True),
         'fechaHora': fields.datetime('Fecha y Hora',required=True, autodate = True),
         'medico_id': fields.many2one("medico","Medico", required=True),
         'paciente_id': fields.many2one("paciente","Paciente", required=True),
