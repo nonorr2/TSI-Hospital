@@ -29,6 +29,13 @@
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="form_string">
+					<group colspan="4" >
+					 	<field name='state' widget='statusbar' statusbar_visible="start,realizandose,terminado,cancelar" statusbar_colors='{"start":"blue","realizandose":"yellow","terminada":"red","cancelar":"orange"}' nolabel="1"/>
+						<button name="realizar" states="start" string="Iniciar" colspan="1" icon="gtk-ok"/>
+						<button name="cancelar" states="start" string="Cancelar" colspan="1" icon="gtk-apply"/>
+						<button name="terminar" states="realizandose" string="Terminar" colspan="1" icon="gtk-apply"/>
+						<button name="cancelar" states="realizandose" string="Cancelar" colspan="1" icon="gtk-apply"/>
+					</group>
 					<group string="Cita" colspan="4" col="4">
 						<field name="name" select="1" />
 						<field name="fechaHora" />
@@ -38,15 +45,7 @@
 						<field name="state"/>
 						<newline />
 						<field name="descripcion" colspan="4" />
-					</group>
-					<separator string="Estado de la cita" colspan="4" />
-					<field name='state' widget='statusbar' statusbar_visible="inicio,realizandose,terminado"
-						statusbar_colors='{"start":"blue","realizandose":"yellow","terminada":"red"}'
-						nolabel="1" />
-					<button name="realizar" states="start" string="Iniciar"
-						colspan="1" icon="gtk-ok" />
-					<button name="terminar" states="realizandose" string="Terminar"
-						colspan="1" icon="gtk-apply" />
+					</group>					
 				</form>
 			</field>
 		</record>

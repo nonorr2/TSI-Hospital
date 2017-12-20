@@ -32,6 +32,14 @@
 			<field name="kind">function</field>
 		</record>
 		
+		<record id="act_cancelar" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_cita" />
+			<field name="flow_stop">True</field>
+			<field name="name">cancelar</field>
+			<field name="action">write({'state':'cancelar'})</field>
+			<field name="kind">function</field>
+		</record>
+		
 		<!-- Transiciones -->
 		<record id="transition_inicio_realizandose" model="workflow.transition">
             <field name="act_from" ref="act_start"/>
@@ -44,8 +52,17 @@
             <field name="act_to" ref="act_terminada"/>
             <field name="signal">terminar</field>
         </record>
-		
-		
-
+        
+         <record id="transition_inicio_cancelar" model="workflow.transition">
+            <field name="act_from" ref="act_start"/>
+            <field name="act_to" ref="act_cancelar"/>
+            <field name="signal">cancelar</field>
+        </record>
+        
+        <record id="transition_realizandose_cancelar" model="workflow.transition">
+            <field name="act_from" ref="act_realizandose"/>
+            <field name="act_to" ref="act_cancelar"/>
+            <field name="signal">cancelar</field>
+        </record>
 	</data>
 </openerp>

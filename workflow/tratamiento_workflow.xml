@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- Declaración del workflow -->
+		<record id="wkf_tratamiento" model="workflow">
+			<field name="name">tratamiento</field>
+			<field name="osv">tratamiento</field>
+			<field name="on_create">True</field>
+		</record>
+
+		<!-- Declaración de nodos -->
+		<record id="act_enTratamiento" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_tratamiento" />
+			<field name="flow_start">True</field>
+			<field name="name">enTratamiento</field>
+			<field name="action">write({'state':'enTratamiento'})</field>
+			<field name="kind">function</field>
+		</record>
+		
+		<record id="act_finTratamiento" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_tratamiento" />
+			<field name="flow_stop">True</field>
+			<field name="name">finTratamiento</field>
+			<field name="action">write({'state':'finTratamiento'})</field>
+			<field name="kind">function</field>
+		</record>
+
+		<!-- Transiciones -->
+		<record id="transition_enTratamiento_finTratamiento" model="workflow.transition">
+            <field name="act_from" ref="act_enTratamiento"/>
+            <field name="act_to" ref="act_finTratamiento"/>
+            <field name="signal">finalizar</field>
+        </record>
+
+	</data>
+</openerp>

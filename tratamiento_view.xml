@@ -7,6 +7,10 @@
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="form_string">
+					<group colspan="4" >
+					 	<field name='state' widget='statusbar' statusbar_visible="enTratamiento,finTratamiento" statusbar_colors='{"enTratamiento":"blue","finTratamiento":"red"}' nolabel="1"/>
+						<button name="finalizar" states="enTratamiento" string="Finalizar Tratamiento" colspan="1" icon="gtk-ok"/>
+					</group>
 					<group string="Tratamiento" colspan="4" col="4">
 						<field name="inicio" />
 						<field name="fin" />
@@ -86,4 +90,3 @@
 			parent="tratamientos_submenu" sequence="100" action="act_tratamiento" />
 	</data>
 </openerp>
-			

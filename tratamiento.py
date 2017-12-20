@@ -35,5 +35,8 @@ class tratamiento(osv.Model):
             'medico_id': fields.many2one("medico", "Medico", required=True),
             'paciente_id': fields.many2one("paciente", "Paciente", required=True),
             'medicamento_ids':fields.many2many('medicamento','medicamento_tratamiento_rel', 'medicamento_id', 'tratamiento_id','Medicamento'),
+            'state':fields.selection([('enTratamiento','En tratamiento'),
+                                  ('finTratamiento','Fin Tratamiento')],'Estados'),
         }
+    _defaults = {'state':'enTratamiento', }   
 tratamiento()
