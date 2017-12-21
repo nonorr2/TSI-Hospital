@@ -39,6 +39,24 @@ class medico(osv.Model):
         res = self.write(cr,uid,ids,{'cita_ids':[ (5, ) ]}, context=None) 
         return res
     
+    def _check_dni(self,cr,uid,ids,context=None):
+            obj=self.browse(cr,uid,ids[0],context=context)
+            esValida = True
+            if len(obj.dni)==9:
+                contador = 0
+                while contador < 8 and esValida == True:
+                    if not obj.dni[contador].isdigit() or obj.dni[contador] < 1:
+                        esValida = False
+                    contador += 1
+                    
+                if esValida == True and obj.dni[8] < 'A' or obj.dni[8] > 'Z':                    
+                    esValida = False
+            else:
+                esValida = False
+                
+            return esValida
+
+    
     _columns = {
             'name':fields.char('Nombre', size=64, required=True, readonly=False),
             'apellidos':fields.char('Apellidos', size=64, required=True, readonly=False),
@@ -53,5 +71,6 @@ class medico(osv.Model):
         }
     
     _sql_constraints=[('dni_med_uniq','unique (dni)','El dni ya existe'),('numcol_med_uniq','unique (numColegiado)','El numero de colegiado ya existe')]
+    _constraints = [(_check_dni, 'El DNI no es valido.' , [ 'dni' ])]
 
 medico()
