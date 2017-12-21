@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+	
+		<!-- Kanban -->
+		<record model="ir.ui.view" id="hospital_medico_kanban_view">
+			<field name="name">hospital_medico_kanban_view</field>
+			<field name="model">medico</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+				<kanban>
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_resource_vignette">
+								<div class="oe_resource_image">
+									<a type="edit">
+										<img t-att-src="kanban_image('medico', 'photo', record.id.value)"
+											class="oe_resource_picture" />
+									</a>
+								</div>
+								<div class="oe_resource_details">
+									<ul>
+										<!--Here u have to write the ur objects field name which u wnt 
+											to display in kanban view -->
+										<li>
+											<field name="name" />
+											<field name="apellidos" />
+										</li>
+										<li>
+											Nº Col: <field name="numColegiado" />
+										</li>
+										<li>
+											DNI: <field name="dni" />
+										</li>
+										<li>
+											Tlf: <field name="telefono" />
+										</li>
+										<li>
+											Email: <field name="email" />
+										</li>
+									</ul>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
 
 		<!-- Tree view -->
 		<record model="ir.ui.view" id="view_medico_tree">
@@ -78,7 +123,7 @@
 			<field name="name">medico</field>
 			<field name="res_model">medico</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">tree,form,graph</field>
+			<field name="view_mode">kanban,tree,form,graph</field>
 		</record>
 
 		<!-- Menu -->
