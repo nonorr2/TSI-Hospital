@@ -33,7 +33,7 @@
 											NUSS: <field name="numSegurSocial" />
 										</li>
 										<li>
-											Tlf: <field name="telefono" />
+											Tlf: <field name="telefono"></field>
 										</li>
 									</ul>
 								</div>

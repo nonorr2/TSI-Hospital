@@ -36,7 +36,7 @@
 											Tlf: <field name="telefono" />
 										</li>
 										<li>
-											Email: <field name="email" />
+											Email: <field name="email"></field>
 										</li>
 									</ul>
 								</div>
