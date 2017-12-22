@@ -55,6 +55,30 @@ class medico(osv.Model):
                 esValida = False
                 
             return esValida
+        
+    def _check_telefono(self,cr,uid,ids,context=None):
+            obj=self.browse(cr,uid,ids[0],context=context)
+            
+            if obj.telefono[0] == '6' or obj.telefono[0] == '9' and len(obj.telefono)==9 and obj.telefono.isdigit():
+                return True
+            else:
+                return False
+
+    def _check_nombre(self,cr,uid,ids,context=None):
+            obj=self.browse(cr,uid,ids[0],context=context)
+            
+            if obj.name.replace(' ','').isalpha():
+                return True
+            else:
+                return False  
+            
+    def _check_apellidos(self,cr,uid,ids,context=None):
+            obj=self.browse(cr,uid,ids[0],context=context)
+            
+            if obj.apellidos.replace(' ','').isalpha():
+                return True
+            else:
+                return False          
 
     
     _columns = {
@@ -71,6 +95,6 @@ class medico(osv.Model):
         }
     
     _sql_constraints=[('dni_med_uniq','unique (dni)','El dni ya existe'),('numcol_med_uniq','unique (numColegiado)','El numero de colegiado ya existe')]
-    _constraints = [(_check_dni, 'El DNI no es valido.' , [ 'dni' ])]
+    _constraints = [(_check_dni, 'El DNI no es valido.' , [ 'dni' ]),(_check_telefono, 'El telefono no es valido.' , [ 'telefono' ]),(_check_nombre, 'El nombre no es valido.' , [ 'name' ]),(_check_apellidos, 'El nombre no es valido.' , [ 'apellidos' ])]
 
 medico()
