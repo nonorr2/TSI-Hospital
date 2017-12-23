@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+		<!-- Form view -->
 		<record model="ir.ui.view" id="tratamiento_form_view">
 			<field name="name">tratamiento_form_view</field>
 			<field name="model">tratamiento</field>
@@ -35,6 +36,7 @@
 			</field>
 		</record>
 
+		<!-- Tree view -->
 		<record model="ir.ui.view" id="tratamiento_tree_view">
 			<field name="name">tratamiento_view_tree</field>
 			<field name="model">tratamiento</field>
@@ -47,10 +49,12 @@
 					<field name="fin" />
 					<field name="name" />
 					<field name="medico_id" />
+					<field name="state" />
 				</tree>
 			</field>
 		</record>
 
+		<!-- Calendar view -->
 		<record model="ir.ui.view" id="tratamiento_calendar_view">
 			<field name="name">tratamiento_view_calendar</field>
 			<field name="model">tratamiento</field>
@@ -63,6 +67,7 @@
 			</field>
 		</record>
 
+		<!-- Gantt view -->
 		<record model="ir.ui.view" id="tratamiento_form_gantt_view">
 			<field name="name">tratamiento_form_gantt_view</field>
 			<field name="model">tratamiento</field>
@@ -77,6 +82,7 @@
 			</field>
 		</record>
 
+		<!-- Accion -->
 		<record id="act_tratamiento" model="ir.actions.act_window">
 			<field name="name">tratamiento</field>
 			<field name="res_model">tratamiento</field>
@@ -84,6 +90,7 @@
 			<field name="view_mode">tree,form,calendar,gantt</field>
 		</record>
 
+		<!-- Menu -->
 		<menuitem name="Tratamientos" id="tratamientos_submenu"
 			parent="hospital" sequence="100" />
 		<menuitem name="Tratamientos" id="tratamientos_sub_submenu"

@@ -25,6 +25,47 @@ from osv import fields
 class paciente(osv.Model):
     _name = 'paciente'
     _description = 'Pacientes del hospital'
+    
+    def _check_dni(self,cr,uid,ids,context=None):
+            obj=self.browse(cr,uid,ids[0],context=context)
+            esValida = True
+            if len(obj.dni)==9:
+                contador = 0
+                while contador < 8 and esValida == True:
+                    if not obj.dni[contador].isdigit() or obj.dni[contador] < 1:
+                        esValida = False
+                    contador += 1
+                    
+                if esValida == True and obj.dni[8] < 'A' or obj.dni[8] > 'Z':                    
+                    esValida = False
+            else:
+                esValida = False
+                
+            return esValida
+    
+    def _check_telefono(self,cr,uid,ids,context=None):
+            obj=self.browse(cr,uid,ids[0],context=context)
+            
+            if obj.telefono[0] == '6' or obj.telefono[0] == '9' and len(obj.telefono)==9 and obj.telefono.isdigit():
+                return True
+            else:
+                return False
+            
+    def _check_nombre(self,cr,uid,ids,context=None):
+            obj=self.browse(cr,uid,ids[0],context=context)
+            
+            if obj.name.replace(' ','').isalpha():
+                return True
+            else:
+                return False  
+            
+    def _check_apellidos(self,cr,uid,ids,context=None):
+            obj=self.browse(cr,uid,ids[0],context=context)
+            
+            if obj.apellidos.replace(' ','').isalpha():
+                return True
+            else:
+                return False  
  
     _columns = {
             'name':fields.char('Nombre', size=64, required=True),
@@ -42,4 +83,5 @@ class paciente(osv.Model):
         }
     
     _sql_constraints=[('dni_pac_uniq','unique (dni)','El dni ya existe'),('dni_segsoc_uniq','unique (numSegurSocial)','El numero de la seguridad social ya existe')]
+    _constraints = [(_check_dni, 'El DNI no es valido.' , [ 'dni' ]),(_check_nombre, 'El nombre no es valido.' , [ 'name' ]),(_check_apellidos, 'El nombre no es valido.' , [ 'apellidos' ])]
 paciente()

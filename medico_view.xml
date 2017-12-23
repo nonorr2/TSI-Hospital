@@ -106,6 +106,7 @@
 			</field>
 		</record>
 
+		<!-- Graph view -->
 		<record model="ir.ui.view" id="view_medico_graph">
 			<field name="name">view_medico_graph</field>
 			<field name="model">medico</field>

@@ -48,7 +48,7 @@
 			<field name="direccion">C\Julio César 4, Sevilla</field>
 			<field name="email">luisa@prueba.com</field>
 			<field name="telefono">954785412</field>
-			<field name="dni">2354785P</field>
+			<field name="dni">12354785P</field>
 			<field name="numSegurSocial">415786541</field>
 			<field name="aseguradora_id" ref="aseguradora02"></field>
 		</record>
@@ -165,20 +165,20 @@
 		<!-- Inseción de hospitales -->
 		<record id="hospital01" model="hospital">
 			<field name="name">Virgen del Rocio</field>
-			<field name="cif">45216985T</field>
+			<field name="cif">T45216985</field>
 			<field name="direccion">Avenida Alcalde Manuel del Valle 16, Sevilla
 			</field>
 			<field name="telefono">954123658</field>
 		</record>
 		<record id="hospital02" model="hospital">
 			<field name="name">San Juan de Dios</field>
-			<field name="cif">63254126J</field>
+			<field name="cif">J63254126</field>
 			<field name="direccion">Carretera Huelva S/N, Sevilla</field>
 			<field name="telefono">954785320</field>
 		</record>
 		<record id="hospital03" model="hospital">
 			<field name="name">Virgen Macarena</field>
-			<field name="cif">54875632V</field>
+			<field name="cif">V54875632</field>
 			<field name="direccion">Calle Dr. Fedriani 3, Sevilla</field>
 			<field name="telefono">954125632</field>
 		</record>
