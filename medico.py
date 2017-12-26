@@ -35,10 +35,6 @@ class medico(osv.Model):
             
         return res
     
-    def _eliminaCitas(self, cr, uid, ids, field, arg,context=None):
-        res = self.write(cr,uid,ids,{'cita_ids':[ (5, ) ]}, context=None) 
-        return res
-    
     def _check_dni(self,cr,uid,ids,context=None):
             obj=self.browse(cr,uid,ids[0],context=context)
             esValida = True

@@ -27,6 +27,14 @@ class medicamento(osv.Model):
     _name = 'medicamento'
     _description = 'Clase que representa los medicamentos'
     
+    def quitarDeTratamientos(self,cr,uid,ids,context=None):
+        # ids es una lista de ids
+        # desde la vista nos llega el id (en ids[0])de la clase
+        # editada en la vista de formulario
+        # Eliminamos los registros de la relación many2many
+        res = self.write(cr,uid,ids,{'tratamiento_ids':[ (5, ) ]}, context=None)
+        return res
+    
     _columns = {
             'prospecto':fields.text('Prospecto', size=64, required=True, readonly=False),
             'nombre':fields.char('Nombre', size=64, required=True, readonly=False),

@@ -83,9 +83,6 @@
 						<field name="email" />
 						<field name="telefono" />
 						<field name="num_citas" />
-						<newline></newline>
-						<separator></separator>
-						<button name="eliminaCitas" string="Liberar agenda" type="object"></button>
 					</group>
 					<newline />
 					<notebook colspan="4">

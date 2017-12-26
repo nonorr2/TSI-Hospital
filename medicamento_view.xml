@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-			
+
 		<!-- Form view -->
 		<record model="ir.ui.view" id="view_medicamento_form">
 			<field name="name">view_medicamento_form</field>
@@ -12,14 +12,17 @@
 					<group string="Medicamento" colspan="4" col="4">
 						<field name="nombre" />
 						<newline />
-						<field name="prospecto" colspan="4"/>
-				    </group>
-				    <newline />
+						<field name="prospecto" colspan="4" />
+					</group>
+					<newline />
+					<separator></separator>
+					<button name="quitarDeTratamientos" string="Eliminar de tratamientos" type="object"></button>
+					<newline />
 					<notebook colspan="4">
 						<page string="Laboratorio">
 							<field name="laboratorio_ids" mode="tree" nolabel="1">
 								<tree>
-								<field name="name" />
+									<field name="name" />
 									<field name="telefono" />
 									<field name="direccion" />
 								</tree>
@@ -29,19 +32,19 @@
 				</form>
 			</field>
 		</record>
-		
+
 		<!-- Tree view -->
- 		<record model="ir.ui.view" id="view_medicamento_tree">
- 			<field name="name">view_medicamento_tree</field>
- 			<field name="model">medicamento</field>
- 			<field name="type">tree</field>
- 			<field name="arch" type="xml">
- 				<tree string="medicamento">
- 					<field name="nombre" />
- 					<field name="prospecto" />
- 				</tree>
- 			</field>
- 		</record>
+		<record model="ir.ui.view" id="view_medicamento_tree">
+			<field name="name">view_medicamento_tree</field>
+			<field name="model">medicamento</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="medicamento">
+					<field name="nombre" />
+					<field name="prospecto" />
+				</tree>
+			</field>
+		</record>
 
 		<!-- Accion -->
 		<record id="act_medicamento" model="ir.actions.act_window">
@@ -51,11 +54,11 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
-		<!-- Menu -->		
+		<!-- Menu -->
 		<menuitem id="medicamento" name="Medicamento" parent="hospital"
 			sequence="100" />
-		<menuitem id="medicamento_submenu" name="Medicamentos" parent="medicamento"
-			sequence="100" action="act_medicamento" />
+		<menuitem id="medicamento_submenu" name="Medicamentos"
+			parent="medicamento" sequence="100" action="act_medicamento" />
 
 	</data>
 </openerp>
