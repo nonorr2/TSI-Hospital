@@ -42,7 +42,8 @@
 					</group>
 					<group string="Cita" colspan="4" col="4">
 						<field name="name" select="1" />
-						<field name="fechaHora" />
+						<field name="fechaHora" on_change="onchange_inicio(fechaHora)"/>
+						<field name="fechaHoraFin" />
 						<field name="paciente_id" />
 						<field name="medico_id" />
 						<field name="ambulancia_id" />

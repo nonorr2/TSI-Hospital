@@ -21,6 +21,7 @@
 ##############################################################################
 from osv import osv
 from osv import fields
+from datetime import datetime, timedelta
 
 class cita(osv.Model):
     _name = 'cita'
@@ -33,10 +34,16 @@ class cita(osv.Model):
             res[cita.id] = cita.id
             
         return res
+    
+    def onchange_inicio(self,cr,uid,ids,inicio):
+        fechaHoraFin=datetime.strptime(inicio,"%Y-%m-%d %H:%M:%S")+timedelta(minutes=10)
+        return{'value':{'fechaHoraFin':str(fechaHoraFin)}}
+
 
     _columns = {
         'name': fields.function(_recuperarID, type='integer', string='Id Cita', store=True),
         'fechaHora': fields.datetime('Fecha y Hora',required=True, autodate = True),
+        'fechaHoraFin': fields.datetime('Fecha y Hora de fin',required=True, autodate = False, readonly=True),
         'medico_id': fields.many2one("medico","Medico", required=True),
         'paciente_id': fields.many2one("paciente","Paciente", required=True),
         'ambulancia_id': fields.many2one("ambulancia","Ambulancia"),
