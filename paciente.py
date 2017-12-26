@@ -42,15 +42,7 @@ class paciente(osv.Model):
                 esValida = False
                 
             return esValida
-    
-    def _check_telefono(self,cr,uid,ids,context=None):
-            obj=self.browse(cr,uid,ids[0],context=context)
-            
-            if obj.telefono[0] == '6' or obj.telefono[0] == '9' and len(obj.telefono)==9 and obj.telefono.isdigit():
-                return True
-            else:
-                return False
-            
+       
     def _check_nombre(self,cr,uid,ids,context=None):
             obj=self.browse(cr,uid,ids[0],context=context)
             
