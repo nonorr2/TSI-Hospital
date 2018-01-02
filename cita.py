@@ -43,7 +43,7 @@ class cita(osv.Model):
     _columns = {
         'name': fields.function(_recuperarID, type='integer', string='Id Cita', store=True),
         'fechaHora': fields.datetime('Fecha y Hora',required=True, autodate = True),
-        'fechaHoraFin': fields.datetime('Fecha y Hora de fin',required=True, autodate = False, readonly=True),
+        'fechaHoraFin': fields.datetime('Fecha y Hora de fin',required=False, autodate = False, readonly=True),
         'medico_id': fields.many2one("medico","Medico", required=True),
         'paciente_id': fields.many2one("paciente","Paciente", required=True),
         'ambulancia_id': fields.many2one("ambulancia","Ambulancia"),
